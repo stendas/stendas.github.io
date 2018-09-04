@@ -415,7 +415,7 @@
 
             let siandien = moment();
             siandien.locale('lt');
-            $('#txt').text(siandien.format('YYYY MM DD, dddd,').toUpperCase() + " " + h + ":" + m + ":" + s);
+            $('#txt').text("<span id='status' style='height: 25px; width: 25px; background-color: green; border-radius: 50%;display: inline-block;'></span> "+siandien.format('YYYY MM DD, dddd,').toUpperCase() + " " + h + ":" + m + ":" + s);
             //document.getElementById('txt').innerHTML =+ "GEGUŽĖ 2018, TREČIADIENIS," +h + ":" + m + ":" + s;
 
 //            if (h === 0 && m === 0 && s >= 55) {
@@ -675,7 +675,7 @@ height:320px;"
         <!--END DESTYTOJU PAKEITIMU SARASAS-->
 
     </div>
-    <p id="pasirinkta_diena" style="color:#cccccc;">
+    <p id="pasirinkta_diena" style="color:white;">
 
     </p>
 
