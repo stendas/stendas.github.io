@@ -1,0 +1,123 @@
+{
+  "dir": "ltr",
+  "lang": "lt",
+  "name": "eif-courses",
+  "scope": "/",
+  "display": "fullscreen",
+  "start_url": "https://eif-courses.github.io/stendas",
+  "short_name": "eif-courses",
+  "theme_color": "transparent",
+  "description": "Vilniaus kolegija",
+  "orientation": "any",
+  "background_color": "transparent",
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/images/favicon.ico",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/bc4295ed-0361-7869-1e40-c1f4582e7684.webPlatform.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/d396a878-cff2-61ec-d92a-4a7ccd6da932.webPlatform.png",
+      "sizes": "1240x600",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/3d11711b-9185-dc4d-c496-ded8e1861279.webPlatform.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/306093fe-2667-bd96-2211-91ef589a74f9.webPlatform.png",
+      "sizes": "150x150",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/666358a3-3215-6645-cbef-584ee5718037.webPlatform.png",
+      "sizes": "88x88",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/a86e1bee-1e94-b9ef-25a9-c4aa46c6b223.webPlatform.png",
+      "sizes": "24x24",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/e42a477e-cd99-66b7-6ffb-a013fdff3c3c.webPlatform.png",
+      "sizes": "50x50",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/bcbf7b80-0d2a-5014-2b96-9092021801a4.webPlatform.png",
+      "sizes": "620x300",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/6022e143-de48-dcd0-e4f4-47ba07834129.webPlatform.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/33468bfa-f03b-da84-879e-a15eae9aa9c5.webPlatform.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/00ac6f58-607e-ac2e-bc6b-17bc22c200fd.webPlatform.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/2c99b77b-b603-03d7-94ac-b4d05ec36153.webPlatform.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/dd83dc7f-68d4-0da2-9021-c69ca29838b0.webPlatform.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/java1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/8e2a26cf-829a-b1db-f1be-62841d2927f9.webPlatform.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/7b262efd-3c28-7521-a77a-31b6b337d76b.webPlatform.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/20581a30-d20d-2421-7721-cfd39c9ebdc7.webPlatform.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/java192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/java512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/e6349d76-995f-de7f-4530-af23a5bf9257.webPlatform.png",
+      "sizes": "76x76",
+      "type": "image/png"
+    }
+
+  ]
+}
