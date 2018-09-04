@@ -1,10 +1,10 @@
 {
   "dir": "ltr",
   "lang": "lt",
-  "name": "eif-courses",
+  "name": "stendas",
   "scope": "/",
   "display": "fullscreen",
-  "start_url": "https://eif-courses.github.io/stendas",
+  "start_url": "https://stendas.github.io",
   "short_name": "eif-courses",
   "theme_color": "transparent",
   "description": "Vilniaus kolegija",
