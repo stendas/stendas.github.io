@@ -287,6 +287,7 @@
             top: 0;
             z-index: 10;
             width: 100%;
+            background-color: #32383e;
         }
 
         .paieskos_laukas_zemiau_menu {
@@ -415,7 +416,10 @@
 
             let siandien = moment();
             siandien.locale('lt');
-            $('#txt').text("<span id='status' style='height: 25px; width: 25px; background-color: green; border-radius: 50%;display: inline-block;'></span> "+siandien.format('YYYY MM DD, dddd,').toUpperCase() + " " + h + ":" + m + ":" + s);
+            $('#txt').text(siandien.format('YYYY MM DD, dddd,').toUpperCase() + " " + h + ":" + m + ":" + s);
+
+            //$("#txt").html("OFFLINE <span id='status' style='height: 100px; width: 100px; background-color: red; border-radius: 50%;display: inline-block;'></span>"+siandien.format('YYYY MM DD, dddd,').toUpperCase() + " " + h + ":" + m + ":" + s);
+
             //document.getElementById('txt').innerHTML =+ "GEGUŽĖ 2018, TREČIADIENIS," +h + ":" + m + ":" + s;
 
 //            if (h === 0 && m === 0 && s >= 55) {
@@ -464,10 +468,14 @@
     <li class="nav-item" style="font-weight: bold;">
         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
            aria-selected="false"><i class="fas fa-search"></i> DARBUOTOJAI</a>
+
+
+
     </li>
+    <span id='status' style='height: 100px;
+           width: 100px; background-image: url("images/live.png");display: inline-block; margin-top:40px;'></span>
 
 </ul>
-
 
 
 
@@ -1800,7 +1808,10 @@ height:320px;"
 
                     if(navigator.onLine){
                         window.location.assign("https://stendas.github.io");
+                        $('#status').css('background-image', 'url("images/live.png")');
+
                     } else {
+                        $('#status').css('background-image', 'url("images/offlinestatus.png")');
                         alert('offline we stay offline version till internet goes live');
                     }
 
