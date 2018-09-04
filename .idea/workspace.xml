@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5e78c911-e7e6-44ad-ba8a-63d8e6a12f7d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -410,14 +409,7 @@
       <workItem from="1536067180718" duration="1056000" />
       <workItem from="1536073837588" duration="292000" />
       <workItem from="1536080076094" duration="542000" />
-      <workItem from="1536083104997" duration="3354000" />
-    </task>
-    <task id="LOCAL-00038" summary="Doubled size whole webapage fonts">
-      <created>1526683535840</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1526683535841</updated>
+      <workItem from="1536083104997" duration="3381000" />
     </task>
     <task id="LOCAL-00039" summary="Prideti paskaitu laikai automatiskai besikeiciantys :)">
       <created>1526683900184</created>
@@ -755,11 +747,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536080385445</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Updated some fixes for alpha&#10;Version v.0.4_beta_early_access">
+      <created>1536086466332</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1536086466333</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256175000" />
+    <option name="totallyTimeSpent" value="256202000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
