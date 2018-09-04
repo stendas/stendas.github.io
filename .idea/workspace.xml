@@ -99,7 +99,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pwabuilder-sw-register.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pwabuilder-sw-register.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pwabuilder-sw-register.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -131,11 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pwabuilder-sw.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pwabuilder-sw.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pwabuilder-sw.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-622">
-              <caret line="92" column="8" lean-forward="true" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
+            <state relative-caret-position="1061">
+              <caret line="133" column="0" lean-forward="true" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -217,8 +217,8 @@
         <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/offline.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/pwabuilder-sw.js" />
         <option value="$PROJECT_DIR$/pwabuilder-sw-register.js" />
+        <option value="$PROJECT_DIR$/pwabuilder-sw.js" />
       </list>
     </option>
   </component>
@@ -400,14 +400,7 @@
       <workItem from="1536073837588" duration="292000" />
       <workItem from="1536080076094" duration="542000" />
       <workItem from="1536083104997" duration="4357000" />
-      <workItem from="1536092189066" duration="2057000" />
-    </task>
-    <task id="LOCAL-00043" summary="Prideti paskaitu laikai automatiskai besikeiciantys :)">
-      <created>1526759963331</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1526759963331</updated>
+      <workItem from="1536092189066" duration="2216000" />
     </task>
     <task id="LOCAL-00044" summary="added IDLE TIMERIS 10 min :)">
       <created>1526760781227</created>
@@ -745,11 +738,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536093760152</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Alpha 1.0v">
+      <created>1536094251066</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1536094251066</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259235000" />
+    <option name="totallyTimeSpent" value="259394000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1063,11 +1063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/images/offlinestatus.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -1126,18 +1121,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pwabuilder-sw.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-622">
-          <caret line="92" column="8" lean-forward="true" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/images/offlinestatus.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pwabuilder-sw-register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pwabuilder-sw.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1061">
+          <caret line="133" column="0" lean-forward="true" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
           <folding />
         </state>
       </provider>
