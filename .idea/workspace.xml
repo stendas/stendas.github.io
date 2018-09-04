@@ -2,27 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e78c911-e7e6-44ad-ba8a-63d8e6a12f7d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/00ac6f58-607e-ac2e-bc6b-17bc22c200fd.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/20581a30-d20d-2421-7721-cfd39c9ebdc7.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/2c99b77b-b603-03d7-94ac-b4d05ec36153.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/306093fe-2667-bd96-2211-91ef589a74f9.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/33468bfa-f03b-da84-879e-a15eae9aa9c5.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/3d11711b-9185-dc4d-c496-ded8e1861279.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/6022e143-de48-dcd0-e4f4-47ba07834129.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/666358a3-3215-6645-cbef-584ee5718037.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/7b262efd-3c28-7521-a77a-31b6b337d76b.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/8e2a26cf-829a-b1db-f1be-62841d2927f9.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/a86e1bee-1e94-b9ef-25a9-c4aa46c6b223.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/bc4295ed-0361-7869-1e40-c1f4582e7684.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/bcbf7b80-0d2a-5014-2b96-9092021801a4.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/d396a878-cff2-61ec-d92a-4a7ccd6da932.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/dd83dc7f-68d4-0da2-9021-c69ca29838b0.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/e42a477e-cd99-66b7-6ffb-a013fdff3c3c.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/e6349d76-995f-de7f-4530-af23a5bf9257.webPlatform.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/java1024.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/java192.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/java512.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -40,8 +19,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="1862" column="0" lean-forward="false" selection-start-line="1862" selection-start-column="0" selection-end-line="1862" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="1848" column="68" lean-forward="true" selection-start-line="1848" selection-start-column="68" selection-end-line="1848" selection-end-column="68" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#1;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -249,7 +228,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1036" />
@@ -433,14 +412,7 @@
       <workItem from="1536073837588" duration="292000" />
       <workItem from="1536080076094" duration="542000" />
       <workItem from="1536083104997" duration="4357000" />
-      <workItem from="1536092189066" duration="342000" />
-    </task>
-    <task id="LOCAL-00039" summary="Prideti paskaitu laikai automatiskai besikeiciantys :)">
-      <created>1526683900184</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1526683900184</updated>
+      <workItem from="1536092189066" duration="357000" />
     </task>
     <task id="LOCAL-00040" summary="Prideti paskaitu laikai automatiskai besikeiciantys :)">
       <created>1526683920518</created>
@@ -778,11 +750,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536086466333</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Updated some fixes for alpha&#10;Version v.0.4_beta_early_access">
+      <created>1536092535943</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1536092535944</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257520000" />
+    <option name="totallyTimeSpent" value="257535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -794,7 +773,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27133825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1126,8 +1105,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="1862" column="0" lean-forward="false" selection-start-line="1862" selection-start-column="0" selection-end-line="1862" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="1848" column="68" lean-forward="true" selection-start-line="1848" selection-start-column="68" selection-end-line="1848" selection-end-column="68" />
           <folding>
             <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#1;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
