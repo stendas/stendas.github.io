@@ -25,7 +25,16 @@ self.addEventListener('install', function(event) {
         caches.open(cacheName).then(function(cache) {
             return cache.addAll(
                 [
-                    '/stendas.github.io/',
+                    '/',
+                    '/css/',
+                    '/dist/',
+                    '/images/',
+                    '/js/',
+                    '/moment/',
+                    '/node_modules/',
+                    '/src',
+                    'index.html',
+                    'manifest.json',
                     '/offline.html'
                 ]
             );
