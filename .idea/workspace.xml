@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5e78c911-e7e6-44ad-ba8a-63d8e6a12f7d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pwabuilder-sw.js" afterPath="$PROJECT_DIR$/pwabuilder-sw.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -98,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pwabuilder-sw-register.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pwabuilder-sw-register.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pwabuilder-sw-register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="238">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -130,11 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pwabuilder-sw.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pwabuilder-sw.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pwabuilder-sw.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="70" lean-forward="true" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+            <state relative-caret-position="-622">
+              <caret line="92" column="8" lean-forward="true" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -217,6 +218,7 @@
         <option value="$PROJECT_DIR$/offline.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/pwabuilder-sw.js" />
+        <option value="$PROJECT_DIR$/pwabuilder-sw-register.js" />
       </list>
     </option>
   </component>
@@ -398,14 +400,7 @@
       <workItem from="1536073837588" duration="292000" />
       <workItem from="1536080076094" duration="542000" />
       <workItem from="1536083104997" duration="4357000" />
-      <workItem from="1536092189066" duration="1568000" />
-    </task>
-    <task id="LOCAL-00042" summary="Prideti paskaitu laikai automatiskai besikeiciantys :)">
-      <created>1526738972888</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1526738972888</updated>
+      <workItem from="1536092189066" duration="2057000" />
     </task>
     <task id="LOCAL-00043" summary="Prideti paskaitu laikai automatiskai besikeiciantys :)">
       <created>1526759963331</created>
@@ -743,11 +738,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536093753062</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Alpha 1.0v">
+      <created>1536093760152</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1536093760152</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258746000" />
+    <option name="totallyTimeSpent" value="259235000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1053,14 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pwabuilder-sw-register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/offline.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1134,8 +1128,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pwabuilder-sw.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-622">
+          <caret line="92" column="8" lean-forward="true" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pwabuilder-sw-register.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="70" lean-forward="true" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
