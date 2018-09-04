@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5e78c911-e7e6-44ad-ba8a-63d8e6a12f7d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pwabuilder-sw.js" afterPath="$PROJECT_DIR$/pwabuilder-sw.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="1848" column="68" lean-forward="true" selection-start-line="1848" selection-start-column="68" selection-end-line="1848" selection-end-column="68" />
+            <state relative-caret-position="282">
+              <caret line="1812" column="26" lean-forward="true" selection-start-line="1812" selection-start-column="26" selection-end-line="1812" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#1;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -55,14 +56,14 @@
                 <element signature="n#style#0;n#div#0;n#div#23;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1536087332614" expanded="true" signature="10121:10214" ph="..." />
-                <marker date="1536087332614" expanded="true" signature="14497:14541" ph="..." />
-                <marker date="1536087332614" expanded="true" signature="14795:14936" ph="..." />
-                <marker date="1536087332614" expanded="true" signature="14985:15001" ph="..." />
-                <marker date="1536087332614" expanded="true" signature="15130:15191" ph="..." />
-                <marker date="1536087332614" expanded="true" signature="15314:15330" ph="..." />
-                <marker date="1536087332614" expanded="true" signature="79484:79503" ph="..." />
-                <marker date="1536087332614" expanded="true" signature="82630:82649" ph="..." />
+                <marker date="1536092664378" expanded="true" signature="10121:10214" ph="..." />
+                <marker date="1536092664378" expanded="true" signature="14497:14541" ph="..." />
+                <marker date="1536092664378" expanded="true" signature="14795:14936" ph="..." />
+                <marker date="1536092664378" expanded="true" signature="14985:15001" ph="..." />
+                <marker date="1536092664378" expanded="true" signature="15130:15191" ph="..." />
+                <marker date="1536092664378" expanded="true" signature="15314:15330" ph="..." />
+                <marker date="1536092664378" expanded="true" signature="79484:79503" ph="..." />
+                <marker date="1536092664378" expanded="true" signature="82630:82649" ph="..." />
               </folding>
             </state>
           </provider>
@@ -130,11 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pwabuilder-sw.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pwabuilder-sw.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pwabuilder-sw.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state relative-caret-position="177">
+              <caret line="49" column="48" lean-forward="true" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -162,7 +163,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Šil</find>
       <find>Netikša</find>
       <find>Kasperavičius</find>
       <find>Netikšienė</find>
@@ -186,12 +186,13 @@
       <find>location</find>
       <find>screensaver</find>
       <find>reload</find>
-      <find>txt</find>
       <find>laikinie</find>
       <find>laikini</find>
       <find>menu</find>
       <find>span</find>
       <find>/33468bfa-f03b-da84-879e-a15eae9aa9c5.webPlatform.png</find>
+      <find>txt</find>
+      <find>loca</find>
     </findStrings>
     <replaceStrings>
       <replace>height=&quot;300px&quot;&gt;&lt;ul</replace>
@@ -216,6 +217,7 @@
         <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/offline.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/pwabuilder-sw.js" />
       </list>
     </option>
   </component>
@@ -228,7 +230,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1036" />
@@ -257,21 +259,6 @@
             <path>
               <item name="stendas.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="stendas.github.io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stendas.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stendas.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stendas.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stendas.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stendas.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stendas.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -412,7 +399,7 @@
       <workItem from="1536073837588" duration="292000" />
       <workItem from="1536080076094" duration="542000" />
       <workItem from="1536083104997" duration="4357000" />
-      <workItem from="1536092189066" duration="357000" />
+      <workItem from="1536092189066" duration="1066000" />
     </task>
     <task id="LOCAL-00040" summary="Prideti paskaitu laikai automatiskai besikeiciantys :)">
       <created>1526683920518</created>
@@ -761,7 +748,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257535000" />
+    <option name="totallyTimeSpent" value="258244000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -773,7 +760,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27133825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1066,14 +1053,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pwabuilder-sw.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pwabuilder-sw-register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1105,8 +1084,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="1848" column="68" lean-forward="true" selection-start-line="1848" selection-start-column="68" selection-end-line="1848" selection-end-column="68" />
+        <state relative-caret-position="282">
+          <caret line="1812" column="26" lean-forward="true" selection-start-line="1812" selection-start-column="26" selection-end-line="1812" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#1;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1141,15 +1120,23 @@
             <element signature="n#style#0;n#div#0;n#div#23;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1536087332614" expanded="true" signature="10121:10214" ph="..." />
-            <marker date="1536087332614" expanded="true" signature="14497:14541" ph="..." />
-            <marker date="1536087332614" expanded="true" signature="14795:14936" ph="..." />
-            <marker date="1536087332614" expanded="true" signature="14985:15001" ph="..." />
-            <marker date="1536087332614" expanded="true" signature="15130:15191" ph="..." />
-            <marker date="1536087332614" expanded="true" signature="15314:15330" ph="..." />
-            <marker date="1536087332614" expanded="true" signature="79484:79503" ph="..." />
-            <marker date="1536087332614" expanded="true" signature="82630:82649" ph="..." />
+            <marker date="1536092664378" expanded="true" signature="10121:10214" ph="..." />
+            <marker date="1536092664378" expanded="true" signature="14497:14541" ph="..." />
+            <marker date="1536092664378" expanded="true" signature="14795:14936" ph="..." />
+            <marker date="1536092664378" expanded="true" signature="14985:15001" ph="..." />
+            <marker date="1536092664378" expanded="true" signature="15130:15191" ph="..." />
+            <marker date="1536092664378" expanded="true" signature="15314:15330" ph="..." />
+            <marker date="1536092664378" expanded="true" signature="79484:79503" ph="..." />
+            <marker date="1536092664378" expanded="true" signature="82630:82649" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pwabuilder-sw.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="49" column="48" lean-forward="true" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
