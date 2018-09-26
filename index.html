@@ -1699,7 +1699,7 @@ height:320px;"
                     </li>
                     <li class="list-group-item">Pareigos:Informacinių sistemų ir Programinės įrangos
                         katedrų administratorė</li>
-                    <li class="list-group-item"> 208 kab.</li>
+                    <li class="list-group-item"> 206 kab.</li>
                 </ul>
             </div>
 
@@ -1763,17 +1763,7 @@ height:320px;"
 
 
     <!--SKELBIMAI ARBA KOLEGIJOS NAUJIENOS IVYKIAI-->
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 
-
-        <div class='fullscreenDiv' style="background-color: darkmagenta; color:white; font-size: 100px;
-    font-weight:
-    bold;">
-            GEGUŽĖS 12 DIENA VYKSTA TARPTAUTINIS PROGRAMUOTOJŲ KONKURSAS
-        </div>
-
-
-    </div>
 
 </div>
 
@@ -1784,7 +1774,35 @@ height:320px;"
         <li class="nav-item">
             <a id="txt" data-toggle="tab" role="tab" aria-controls="profile"
                aria-selected="false" style="font-size: 100px; font-weight: bold;">9:45:15</a>
+            <span id="kelinta_savaite" style="font-size:100px; font-weight: bold;">, 2 SAVAITĖ</span>
         </li>
+<script>
+
+    Date.prototype.getWeek = function () {
+        var target  = new Date(this.valueOf());
+        var dayNr   = (this.getDay() + 6) % 7;
+        target.setDate(target.getDate() - dayNr + 3);
+        var firstThursday = target.valueOf();
+        target.setMonth(0, 1);
+        if (target.getDay() != 4) {
+            target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
+        }
+        return 1 + Math.ceil((firstThursday - target) / 604800000);
+    };
+
+    let d= new Date();
+    let kelinta = d.getWeek() + 1;
+
+
+    if(kelinta % 2 === 1){
+        $("#kelinta_savaite").text(", 1 SAVAITĖ");
+    }else{
+        $("#kelinta_savaite").text(", 2 SAVAITĖ");
+    }
+
+    //alert(d.getWeek()+1);
+</script>
+
 
     </ul>
 </footer>
