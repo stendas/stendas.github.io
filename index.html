@@ -39,7 +39,11 @@
 
 
 
+                        iframe#InnerIframe{
 
+                            background:
+                                    url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100% 100%"><text fill="%23111111" x="50%" y="50%" font-family="\'Lucida Grande\', sans-serif" font-size="100pt" text-anchor="middle">TVARKARAŠTIS... RUOŠIAMAS</text></svg>') 0px 0px no-repeat;
+                        }
 
 
 
@@ -297,6 +301,15 @@
             width: 100%;
         }
 
+        .close_mygtukas {
+            position: fixed;
+            top: 300px;
+            z-index: 10;
+            width: 100%;
+        }
+
+
+
         .savaites_dienos_fiksuotas {
             position: fixed;
             top: 5px;
@@ -398,7 +411,9 @@
         }
 
 
-
+        .avoid-clicks {
+            pointer-events: none;
+        }
     </style>
 
     <script>
@@ -501,8 +516,8 @@ height:320px;"
             "Darbuotojų paieška, Įveskite pvz. pagal vardą, pavardę, pareigas, kabinetą.").val("").focus().blur();
         $('div#apacion').css('top', '60%');
         $('div#virsun').css('top', '40%');
-
-
+        $(".popup").hide(); // TODO ADDED NEW CONTENT SU IFRAME ZAIDZIU
+        $('.close_mygtukas').hide();
 //        var e = jQuery.Event("keydown", {
 //            keyCode: 13
 //        });
@@ -693,6 +708,7 @@ height:320px;"
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
 
+
         <div class="topnav">
 
             <div class="search-container">
@@ -702,11 +718,51 @@ height:320px;"
                                                               placeholder="Darbuotojų paieška, pvz. pagal vardą, pavardę, pareigas, kabinetą."
                                                               onfocus="clearSearchField()"
                                                               onclick="clearSearchField()"/>
-                    <!--<button type="submit"><i class="fas fa-times" onclick="clearSearchField()"></i></button>-->
+
+
                 </p>
+
+
+            </div>
+
+
+        </div>
+
+        <a class="close_mygtukas" style=" background: red; padding: 20px; font-size:40pt;width:90px; color:white;
+        font-weight:
+        bold;border:1px
+        solid grey;" href="#">X
+        </a>
+
+        <script>
+            $('.close_mygtukas').hide();
+            $('.close_mygtukas').click(function() {
+                $('.popup').hide();
+                $('.close_mygtukas').hide();
+            });
+        </script>
+
+
+        <!--IFRAME POZICIJA-->
+        <div class="wrapper">
+
+
+            <div class="popup">
+                <!--<iframe style="margin-top: 90px" src="view.html" width="2900px" height="2000px" id="InnerIframe"-->
+                        <!--scrolling="no">-->
+                    <!--<p>Your browser does not support iframes.</p>-->
+                <!--</iframe>-->
+                <!--<div id="block" style="position: absolute; top: 0; left: 0; width: 2900px; height:2100px">-->
+                    <!--<a style="margin-top: 290px; background: red; padding: 20px; font-size:40pt;color:white; font-weight: bold;border:1px solid grey;" href="#" class="close">X-->
+                    <!--</a>-->
+
+
+                <!--</div>-->
+
 
             </div>
         </div>
+        <!--IFRAME END-->
 
 
         <div class="grid">
@@ -969,6 +1025,46 @@ height:320px;"
                     <li class="list-group-item">Marius Gžegoževskis</li>
                     <li class="list-group-item">Pareigos: lektorius</li>
                     <li class="list-group-item">Konsultacijos Trečiadieniais 13:30 – 15:00 420A kab.
+
+
+                        <div class="links">
+                            <a class="openpop" href="https://vikoeif.edupage.org/timetable/view.php?num=90&teacher=*12">[Paskaitų tvarkaraštis]</a>
+
+                        </div>
+
+
+                        <script>
+                            $(document).ready(function () {
+                                $(".popup").hide();
+                                $(".openpop").click(function (e) {
+                                    e.preventDefault();
+                                    //$("iframe").attr("src", $(this).attr('href'));
+                                    $('.close_mygtukas').show();
+                           $('.popup').html('<iframe class="avoid-clicks" style="margin-top: 90px;" src="view.html" width="2900px" height="2000px" id="InnerIframe" scrolling="no"> <p>Your browser does not support iframes.</p> </iframe> ');
+
+
+
+                                    //$(".links").fadeOut('slow');
+                                    $(".popup").fadeIn('slow');
+
+                                   // $("iframe#InnerIframe").show();
+                                });
+
+                                $(".close").click(function () {
+                                    $(this).parent().fadeOut("slow");
+                                    $('iframe#InnerIframe').hide();
+                                    $('.popup').hide();
+                                    //$(".links").fadeIn("slow");
+                                });
+                            });
+    </script>
+
+
+
+
+
+
+
                     </li>
                 </ul>
             </div>
@@ -1882,7 +1978,10 @@ height:320px;"
             pakeitimaiDiv.innerHTML = "";
 
             document.getElementById("pakeitimai").innerHTML =
-                '<tr><th>PASKAITA</th>' + '<th>GRUPĖ</th>' + '<th>DĖSTYTOJAS</th>' + '<th>AUDITORIJA</th></tr></thead>';
+                '<th colspan="4" style="background: white!important; color:red; font-size:50pt">DĖMESIO! Konsultacijos vyks pagal patvirtintą konsultacijų tvarkaraštį 2018.10.29-2018.11.02, plačiau žr. https://eif.viko.lt.</th>'+'<tr><th>PASKAITA</th>' +
+                '<th>GRUPĖ</th>' +
+                '<th>DĖSTYTOJAS</th>' +
+                '<th>AUDITORIJA</th></tr></thead>';
 
             const laiko_intervalas = ["7<sup>45</sup> - 9<sup>15</sup>", "9<sup>30</sup> - 11<sup>00</sup>", "11<sup>45</sup> - 13<sup>15</sup>",
                 "13<sup>30</sup> - 15<sup>00</sup>", "15<sup>15</sup> - 16<sup>45</sup>", "17<sup>15</sup>" +
@@ -1944,6 +2043,7 @@ height:320px;"
 
     function clearSearchField() {
         $("input.quicksearch").val("");
+        $("iframe#InnerIframe").hide(); //TODO ZAIDZIU SU FRAME
     }
 
     function readAndDisplayData(diena) {
@@ -1958,8 +2058,9 @@ height:320px;"
             let keitimai = "";
             pakeitimaiDiv.innerHTML = "";
 
-            document.getElementById("pakeitimai").innerHTML =
-                '<thead><tr><th>PASKAITA</th>' + '<th>GRUPĖ</th>' + '<th>DĖSTYTOJAS</th>' +
+            document.getElementById("pakeitimai").innerHTML
+                =
+                '<thead>'+"<th colspan=\"4\" style=\"background: white!important; color:red; font-size:50pt\">DĖMESIO! Konsultacijos vyks pagal patvirtintą konsultacijų tvarkaraštį 2018.10.29-2018.11.02, plačiau žr. https://eif.viko.lt.</th>"+'<tr><th>PASKAITA</th>' + '<th>GRUPĖ</th>' + '<th>DĖSTYTOJAS</th>' +
                 '<th>AUDITORIJA</th></tr></thead>';
 
             const laiko_intervalas = ["7<sup>45</sup> - 9<sup>15</sup>", "9<sup>30</sup> - 11<sup>00</sup>", "11<sup>45</sup> - 13<sup>15</sup>",
@@ -1989,9 +2090,8 @@ height:320px;"
 
     }
 </script>
-<script>
 
-</script>
+
 
 
 </body>
