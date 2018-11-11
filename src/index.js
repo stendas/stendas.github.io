@@ -8,7 +8,7 @@ let keyboard = new Keyboard({
             "\u0105 \u010D \u0119 \u0117 \u012F \u0161 \u0173 \u016B \u017E {bksp}  ",
             "q w e r t y u i o p 7 8 9",
             "\ a s d f g h j k l 4 5 6",
-            "\ z x c v b n m \uD83D\uDE0E 0 1 2 3"
+            "\ z x c v b n m , 0 1 2 3"
         ]
     },
     display: {
