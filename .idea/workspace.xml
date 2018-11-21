@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e78c911-e7e6-44ad-ba8a-63d8e6a12f7d" name="Default" comment="tidy up some code&#10;v2.0 alpha">
+    <list default="true" id="5e78c911-e7e6-44ad-ba8a-63d8e6a12f7d" name="Default" comment="tidy up some code&#10;v2.1 alpha">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,17 +17,19 @@
     <session id="-749024240">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
+          <entry key="project.closed" value="27" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="5" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="24" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -37,7 +37,7 @@
           <entry key="css" value="7" />
           <entry key="html" value="3679" />
           <entry key="js" value="1" />
-          <entry key="txt" value="258" />
+          <entry key="txt" value="259" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -45,7 +45,7 @@
           <entry key="CSS" value="7" />
           <entry key="HTML" value="3679" />
           <entry key="JavaScript" value="1" />
-          <entry key="PLAIN_TEXT" value="258" />
+          <entry key="PLAIN_TEXT" value="259" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -71,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="2212" lean-forward="true" selection-start-line="2212" selection-end-line="2212" />
+            <state relative-caret-position="698">
+              <caret line="2212" selection-start-line="2212" selection-end-line="2212" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#1;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -194,8 +194,9 @@
       <path value="$PROJECT_DIR$/node_modules/shuffle/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="96" />
+    <option name="y" value="206" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -204,7 +205,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -226,6 +226,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -392,14 +393,10 @@
       <workItem from="1541525423390" duration="3461000" />
       <workItem from="1541539004183" duration="4000" />
       <workItem from="1541628525635" duration="13000" />
-      <workItem from="1541962332186" duration="1461000" />
-    </task>
-    <task id="LOCAL-00060" summary="FINAL WITH BUG FIXED FOR DATE AND MONTH">
-      <created>1527239326977</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1527239326977</updated>
+      <workItem from="1541962332186" duration="1515000" />
+      <workItem from="1542108358898" duration="1000" />
+      <workItem from="1542623781506" duration="2000" />
+      <workItem from="1542624956553" duration="58000" />
     </task>
     <task id="LOCAL-00061" summary="Updated style, next step for alpha version iteration">
       <created>1527260899517</created>
@@ -737,11 +734,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541528796784</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="tidy up some code&#10;v2.1 alpha">
+      <created>1541963810374</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1541963810375</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="309096000" />
+    <option name="totallyTimeSpent" value="309211000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -753,10 +757,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="96" y="206" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15437302" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15384616" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -767,7 +771,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.48366702" weight="0.13542795" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4710579" visible="true" weight="0.14409535" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4710579" visible="true" weight="0.14332604" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5231823" side_tool="true" weight="0.18418202" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4768177" weight="0.18418202" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -802,7 +806,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Doubled size whole webapage fonts" />
     <MESSAGE value="Prideti paskaitu laikai automatiskai besikeiciantys :)" />
     <MESSAGE value="added IDLE TIMERIS :)" />
     <MESSAGE value="added IDLE TIMERIS 10 min :)" />
@@ -827,7 +830,8 @@
     <MESSAGE value="Added Information text &#10;Added new Feature Schedules for Lectures&#10;Mini style updates v1.1" />
     <MESSAGE value="tidy up some code&#10;v1.9 alpha" />
     <MESSAGE value="tidy up some code&#10;v2.0 alpha" />
-    <option name="LAST_COMMIT_MESSAGE" value="tidy up some code&#10;v2.0 alpha" />
+    <MESSAGE value="tidy up some code&#10;v2.1 alpha" />
+    <option name="LAST_COMMIT_MESSAGE" value="tidy up some code&#10;v2.1 alpha" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/moment/min/locales.js">
@@ -945,13 +949,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pikaday.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -990,15 +988,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="2212" lean-forward="true" selection-start-line="2212" selection-end-line="2212" />
+        <state relative-caret-position="698">
+          <caret line="2212" selection-start-line="2212" selection-end-line="2212" />
           <folding>
             <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#1;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1008,8 +1005,6 @@
             <element signature="n#style#0;n#li#0;n#ul#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#embed#0;n#!!top" expanded="true" />
             <marker date="1541963524280" expanded="true" signature="11378:11471" ph="..." />
             <marker date="1541963524280" expanded="true" signature="15968:16012" ph="..." />
             <marker date="1541963524280" expanded="true" signature="16284:16425" ph="..." />
