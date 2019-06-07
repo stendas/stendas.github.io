@@ -1,0 +1,26 @@
+{
+  "name": "stendas.github.io-master",
+  "version": "1.0.0",
+  "description": "stendas",
+  "main": "app.js",
+  "dependencies": {
+    "browserify": "^16.2.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "shuffle": "^0.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eif-courses/stendas.github.io-master.git"
+  },
+  "author": "Marius Gzegozevskis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eif-courses/stendas.github.io-master/issues"
+  },
+  "homepage": "https://github.com/eif-courses/stendas.github.io-master#readme"
+}

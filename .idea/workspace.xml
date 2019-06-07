@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e78c911-e7e6-44ad-ba8a-63d8e6a12f7d" name="Default" comment="tidy up some code&#10;v2.1 alpha">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5e78c911-e7e6-44ad-ba8a-63d8e6a12f7d" name="Default" comment="Informacinis stendas v2.0-beta&#10;- Back to main page switched to CLICK EVENT &#10;- Instead reload page -&gt; changed 1 hour when updating data from web." />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -13,94 +11,83 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-749024240">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="27" />
-          <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.10" value="3" />
-          <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.2" value="5" />
-          <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="3" />
-          <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="27" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="7" />
-          <entry key="html" value="3679" />
-          <entry key="js" value="1" />
-          <entry key="txt" value="259" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="7" />
-          <entry key="HTML" value="3679" />
-          <entry key="JavaScript" value="1" />
-          <entry key="PLAIN_TEXT" value="259" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="css" value="2" />
-          <entry key="html" value="4" />
-          <entry key="js" value="1" />
-          <entry key="rnc" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSS" value="2" />
-          <entry key="HTML" value="4" />
-          <entry key="JavaScript" value="1" />
-          <entry key="RNG Compact" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="698">
-              <caret line="2212" selection-start-line="2212" selection-end-line="2212" />
+            <state relative-caret-position="129">
+              <caret line="332" column="11" lean-forward="true" selection-start-line="332" selection-start-column="11" selection-end-line="332" selection-end-column="11" />
               <folding>
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#strong#0;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#1;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#ul#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#embed#0;n#!!top" expanded="true" />
-                <marker date="1541963524280" expanded="true" signature="11378:11471" ph="..." />
-                <marker date="1541963524280" expanded="true" signature="15968:16012" ph="..." />
-                <marker date="1541963524280" expanded="true" signature="16284:16425" ph="..." />
-                <marker date="1541963524280" expanded="true" signature="16474:16490" ph="..." />
-                <marker date="1541963524280" expanded="true" signature="16619:16680" ph="..." />
-                <marker date="1541963524280" expanded="true" signature="16803:16819" ph="..." />
-                <marker date="1541963524280" expanded="true" signature="106739:106758" ph="..." />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9741">
+              <caret line="573" column="26" selection-start-line="573" selection-start-column="26" selection-end-line="573" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/all.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="82" selection-start-line="4" selection-start-column="82" selection-end-line="4" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images/load.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images/live.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images/favicon.ico">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -108,43 +95,43 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Mari</find>
-      <find>paskaita</find>
-      <find>paiesk</find>
-      <find>Darb</find>
-      <find>click</find>
-      <find>Paskaita</find>
-      <find>PASKAITA</find>
-      <find>InnerIframe</find>
-      <find>iframe</find>
-      <find>clear</find>
-      <find>vyks</find>
-      <find>links</find>
-      <find>Mariu</find>
-      <find>gzego</find>
-      <find>pop</find>
-      <find>popu</find>
-      <find>Marius</find>
-      <find>@eif.viko.lt</find>
-      <find>popup</find>
+      <find>button</find>
       <find>close</find>
-      <find>Pet</find>
-      <find>Pareigos</find>
-      <find>list-group</find>
-      <find>element-item</find>
-      <find>470</find>
+      <find>konsultacijos</find>
+      <find>get</find>
+      <find>jquer</find>
       <find>firebase</find>
-      <find>DĖME</find>
+      <find>JSON.parse(localStorage.getItem('dest')).rows;</find>
+      <find>JSON.parse(localStorage.getItem('dest')).rows</find>
+      <find>item transiti</find>
+      <find>.grid</find>
+      <find>position</find>
+      <find>grid</find>
+      <find>dayNumber</find>
+      <find>dest</find>
+      <find>console.log</find>
       <find>profile</find>
-      <find>hideKeyboard</find>
-      <find>hide</find>
+      <find>table</find>
+      <find>.75rem</find>
+      <find>daymo</find>
+      <find>dayMon</find>
+      <find>red</find>
+      <find>dayS</find>
+      <find>pid</find>
+      <find>savaite</find>
+      <find>dayid</find>
+      <find>p.ac</find>
+      <find>dayString</find>
+      <find>frame</find>
+      <find>onclick</find>
+      <find>home</find>
     </findStrings>
     <replaceStrings>
       <replace>height=&quot;300px&quot;&gt;&lt;ul</replace>
@@ -169,72 +156,88 @@
         <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/pwabuilder-sw-register.js" />
         <option value="$PROJECT_DIR$/pwabuilder-sw.js" />
-        <option value="$PROJECT_DIR$/view.html" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/offline.html" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/view.html" />
+        <option value="$PROJECT_DIR$/js/d3.v5.min.js" />
+        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/moment/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/jquery-ui/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/jquery/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/shuffle/package.json" />
-    </packageJsonPaths>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="452" />
+    <option name="y" value="142" />
+    <option name="width" value="1040" />
+    <option name="height" value="744" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="96" />
-    <option name="y" value="206" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="stendas.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stendas.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="stendas.github.io-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stendas.github.io-master" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="stendas.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stendas.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="stendas.github.io-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stendas.github.io-master" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="stendas.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stendas.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="stendas.github.io-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stendas.github.io-master" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stendas.github.io-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stendas.github.io-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/Unreal projects/testUE/pirmas/HTML5" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app.js" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.jscs" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.jscs" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="" />
+    <property name="node.js.selected.package.jscs" value="" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Linters.JSLint" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -261,19 +264,25 @@
     </option>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/stendas/index.html">
+    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/stendas/index.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/stendas/index.html">
+    <configuration name="index.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/stendas/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="app.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="JavaScript Debug.index.html (1)" />
+      <item itemvalue="Node.js.app.js" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.index.html (1)" />
       </list>
     </recent_temporary>
@@ -397,355 +406,403 @@
       <workItem from="1542108358898" duration="1000" />
       <workItem from="1542623781506" duration="2000" />
       <workItem from="1542624956553" duration="58000" />
+      <workItem from="1557589146719" duration="16384000" />
+      <workItem from="1557642902173" duration="141000" />
+      <workItem from="1557684182183" duration="12271000" />
+      <workItem from="1557726300754" duration="7073000" />
+      <workItem from="1557737534100" duration="7682000" />
+      <workItem from="1557776945595" duration="79000" />
+      <workItem from="1557867665815" duration="3408000" />
+      <workItem from="1557989885193" duration="756000" />
+      <workItem from="1558014069069" duration="3364000" />
+      <workItem from="1558032325270" duration="5095000" />
+      <workItem from="1558068288239" duration="17639000" />
+      <workItem from="1558168050289" duration="652000" />
+      <workItem from="1558171142644" duration="9000" />
+      <workItem from="1558175802159" duration="681000" />
+      <workItem from="1558186749688" duration="4689000" />
+      <workItem from="1558193324509" duration="1449000" />
+      <workItem from="1558195045991" duration="386000" />
+      <workItem from="1558332003611" duration="148000" />
+      <workItem from="1558335786468" duration="4137000" />
+      <workItem from="1558342476797" duration="9224000" />
+      <workItem from="1558385744638" duration="2269000" />
+      <workItem from="1558417991641" duration="14377000" />
+      <workItem from="1558532939616" duration="304000" />
+      <workItem from="1558587254460" duration="6413000" />
+      <workItem from="1558613194238" duration="445000" />
+      <workItem from="1558673335339" duration="3126000" />
+      <workItem from="1558689973221" duration="2496000" />
+      <workItem from="1558934723554" duration="3085000" />
+      <workItem from="1558945830784" duration="3057000" />
+      <workItem from="1558991034678" duration="2909000" />
+      <workItem from="1559019197582" duration="3488000" />
+      <workItem from="1559029340779" duration="872000" />
+      <workItem from="1559033350506" duration="1570000" />
+      <workItem from="1559039497125" duration="8701000" />
+      <workItem from="1559053397890" duration="1869000" />
+      <workItem from="1559107484444" duration="1540000" />
+      <workItem from="1559109414952" duration="253000" />
+      <workItem from="1559223302650" duration="2538000" />
+      <workItem from="1559278816971" duration="1055000" />
+      <workItem from="1559312723335" duration="1424000" />
+      <workItem from="1559505267663" duration="2701000" />
+      <workItem from="1559542722296" duration="5147000" />
+      <workItem from="1559550666721" duration="314000" />
+      <workItem from="1559552416818" duration="165000" />
+      <workItem from="1559591111234" duration="2008000" />
+      <workItem from="1559796249062" duration="629000" />
+      <workItem from="1559804509669" duration="174000" />
+      <workItem from="1559901235819" duration="19000" />
     </task>
-    <task id="LOCAL-00061" summary="Updated style, next step for alpha version iteration">
-      <created>1527260899517</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
+    <task id="LOCAL-00121" summary="tidy up some code&#10;v2.1 alpha">
+      <created>1558082094888</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
       <option name="project" value="LOCAL" />
-      <updated>1527260899518</updated>
+      <updated>1558082094889</updated>
     </task>
-    <task id="LOCAL-00062" summary="FINAL WITH BUG FIXED FOR DATE AND MONTH">
-      <created>1527265178480</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
+    <task id="LOCAL-00122" summary="tidy up some code&#10;v2.1 alpha">
+      <created>1558089339509</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
       <option name="project" value="LOCAL" />
-      <updated>1527265178480</updated>
+      <updated>1558089339509</updated>
     </task>
-    <task id="LOCAL-00063" summary="FINAL WITH BUG FIXED FOR DATE AND MONTH">
-      <created>1527269486656</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
+    <task id="LOCAL-00123" summary="tidy up some code&#10;- fixed loading list before enter to list">
+      <created>1558168695334</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
       <option name="project" value="LOCAL" />
-      <updated>1527269486658</updated>
+      <updated>1558168695336</updated>
     </task>
-    <task id="LOCAL-00064" summary="Major Changes incomming &#10;Version v.1.9_alpha_RC">
-      <created>1527484679692</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
+    <task id="LOCAL-00124" summary="- Added Bundle&#10;- Crawling more data">
+      <created>1558191535171</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
       <option name="project" value="LOCAL" />
-      <updated>1527484679692</updated>
+      <updated>1558191535192</updated>
     </task>
-    <task id="LOCAL-00065" summary="Major Changes incomming styleFIX &#10;Version v.1.9_alpha_RC">
-      <created>1527487395956</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
+    <task id="LOCAL-00125" summary="- Added Bundle&#10;- Crawling more data">
+      <created>1558193777475</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
       <option name="project" value="LOCAL" />
-      <updated>1527487395956</updated>
+      <updated>1558193777476</updated>
     </task>
-    <task id="LOCAL-00066" summary="Major Changes incomming styleFIX &#10;Version v.1.9_alpha_RC">
-      <created>1527487502248</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
+    <task id="LOCAL-00126" summary="- Added Bundle&#10;- Crawling more data">
+      <created>1558194676044</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
       <option name="project" value="LOCAL" />
-      <updated>1527487502248</updated>
+      <updated>1558194676044</updated>
     </task>
-    <task id="LOCAL-00067" summary="Updated some fixes for alpha&#10;Version v.0.1_alpha">
-      <created>1527569639026</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
+    <task id="LOCAL-00127" summary="Crawler file">
+      <created>1558195116831</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
       <option name="project" value="LOCAL" />
-      <updated>1527569639026</updated>
+      <updated>1558195116832</updated>
     </task>
-    <task id="LOCAL-00068" summary="Updated some fixes for alpha&#10;Version v.0.1_alpha">
-      <created>1527699568567</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
+    <task id="LOCAL-00128" summary="UPDADED REMOVED BUNDLE">
+      <created>1558195208696</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
       <option name="project" value="LOCAL" />
-      <updated>1527699568568</updated>
+      <updated>1558195208696</updated>
     </task>
-    <task id="LOCAL-00069" summary="Updated some fixes for alpha&#10;Version v.0.1_alpha">
-      <created>1527705444740</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
+    <task id="LOCAL-00129" summary="UPDADED REMOVED BUNDLE">
+      <created>1558195422047</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
       <option name="project" value="LOCAL" />
-      <updated>1527705444740</updated>
+      <updated>1558195422047</updated>
     </task>
-    <task id="LOCAL-00070" summary="Updated some fixes for alpha&#10;Version v.0.1_alpha">
-      <created>1527706055299</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
+    <task id="LOCAL-00130" summary="UPDADED REMOVED BUNDLE">
+      <created>1558338364303</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
       <option name="project" value="LOCAL" />
-      <updated>1527706055299</updated>
+      <updated>1558338364304</updated>
     </task>
-    <task id="LOCAL-00071" summary="Updated some fixes for alpha&#10;Version v.0.2_alpha">
-      <created>1527854102662</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
+    <task id="LOCAL-00131" summary="UPDADED REMOVED BUNDLE&#10;- Added new style to table ect">
+      <created>1558346996348</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
       <option name="project" value="LOCAL" />
-      <updated>1527854102663</updated>
+      <updated>1558346996349</updated>
     </task>
-    <task id="LOCAL-00072" summary="Updated some fixes for alpha&#10;Version v.0.2_alpha">
-      <created>1527926732849</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
+    <task id="LOCAL-00132" summary="UPDADED REMOVED BUNDLE&#10;- Added new style to table ect">
+      <created>1558347557507</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
       <option name="project" value="LOCAL" />
-      <updated>1527926732849</updated>
+      <updated>1558347557507</updated>
     </task>
-    <task id="LOCAL-00073" summary="Updated some fixes for alpha&#10;Version v.0.2_alpha">
-      <created>1528052278931</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
+    <task id="LOCAL-00133" summary="UPDADED REMOVED BUNDLE&#10;- Added new style to table ect">
+      <created>1558347728571</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
       <option name="project" value="LOCAL" />
-      <updated>1528052278931</updated>
+      <updated>1558347728571</updated>
     </task>
-    <task id="LOCAL-00074" summary="Updated some fixes for alpha&#10;Version v.0.3_pre_alpha">
-      <created>1528052719730</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
+    <task id="LOCAL-00134" summary="UPDADED REMOVED BUNDLE&#10;- Added new style to table ect">
+      <created>1558349565969</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
       <option name="project" value="LOCAL" />
-      <updated>1528052719730</updated>
+      <updated>1558349565969</updated>
     </task>
-    <task id="LOCAL-00075" summary="Updated some fixes for alpha&#10;Version v.0.3_pre_alpha">
-      <created>1528053740594</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
+    <task id="LOCAL-00135" summary="UPDADED REMOVED BUNDLE&#10;- Added new style to table ect">
+      <created>1558352587883</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
       <option name="project" value="LOCAL" />
-      <updated>1528053740594</updated>
+      <updated>1558352587883</updated>
     </task>
-    <task id="LOCAL-00076" summary="Updated some fixes for alpha&#10;Version v.0.3_pre_alpha">
-      <created>1528088693867</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
+    <task id="LOCAL-00136" summary="UPDADED REMOVED BUNDLE&#10;- Added new style to table ect">
+      <created>1558388005199</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
       <option name="project" value="LOCAL" />
-      <updated>1528088693867</updated>
+      <updated>1558388005199</updated>
     </task>
-    <task id="LOCAL-00077" summary="Updated some fixes for alpha&#10;Version v.0.3_pre_alpha">
-      <created>1528311052522</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
+    <task id="LOCAL-00137" summary="UPDADED REMOVED BUNDLE&#10;- Keyboard style and button">
+      <created>1558419483863</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
       <option name="project" value="LOCAL" />
-      <updated>1528311052522</updated>
+      <updated>1558419483864</updated>
     </task>
-    <task id="LOCAL-00078" summary="Updated some fixes for alpha&#10;Version v.0.3_pre_alpha">
-      <created>1528388715369</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
+    <task id="LOCAL-00138" summary="UPDADED REMOVED BUNDLE&#10;- Keyboard style and button">
+      <created>1558423820717</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
       <option name="project" value="LOCAL" />
-      <updated>1528388715370</updated>
+      <updated>1558423820717</updated>
     </task>
-    <task id="LOCAL-00079" summary="Updated some fixes for alpha&#10;Version v.0.4_beta_early_access">
-      <created>1528998690942</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
+    <task id="LOCAL-00139" summary="UPDADED REMOVED BUNDLE&#10;- Keyboard style and button">
+      <created>1558428148160</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
       <option name="project" value="LOCAL" />
-      <updated>1528998690942</updated>
+      <updated>1558428148160</updated>
     </task>
-    <task id="LOCAL-00080" summary="Updated some fixes for alpha&#10;Version v.0.4_beta_early_access">
-      <created>1534444374991</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
+    <task id="LOCAL-00140" summary="UPDADED REMOVED BUNDLE&#10;- Keyboard style and button">
+      <created>1558432332485</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
       <option name="project" value="LOCAL" />
-      <updated>1534444374991</updated>
+      <updated>1558432332485</updated>
     </task>
-    <task id="LOCAL-00081" summary="Updated some fixes for alpha&#10;Version v.0.4_beta_early_access">
-      <created>1534444641819</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
+    <task id="LOCAL-00141" summary="UPDADED REMOVED BUNDLE&#10;- Keyboard style and button">
+      <created>1558438690427</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
       <option name="project" value="LOCAL" />
-      <updated>1534444641819</updated>
+      <updated>1558438690427</updated>
     </task>
-    <task id="LOCAL-00082" summary="Updated some fixes for alpha&#10;Version v.0.4_beta_early_access">
-      <created>1534444787605</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
+    <task id="LOCAL-00142" summary="- Added Konsultacijos document&#10;- Fixed issues &#10;- different styles by types">
+      <created>1558591924378</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
       <option name="project" value="LOCAL" />
-      <updated>1534444787605</updated>
+      <updated>1558591924380</updated>
     </task>
-    <task id="LOCAL-00083" summary="Updated some fixes for alpha&#10;Version v.0.4_beta_early_access">
-      <created>1536067534613</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
+    <task id="LOCAL-00143" summary="- Added Konsultacijos document&#10;- Fixed issues &#10;- different styles by types">
+      <created>1558612614197</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
       <option name="project" value="LOCAL" />
-      <updated>1536067534614</updated>
+      <updated>1558612614197</updated>
     </task>
-    <task id="LOCAL-00084" summary="Updated some fixes for alpha&#10;Version v.0.4_beta_early_access">
-      <created>1536068199790</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
+    <task id="LOCAL-00144" summary="- Added Konsultacijos document&#10;- Fixed issues &#10;- different styles by types">
+      <created>1558949945972</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
       <option name="project" value="LOCAL" />
-      <updated>1536068199790</updated>
+      <updated>1558949945973</updated>
     </task>
-    <task id="LOCAL-00085" summary="Updated some fixes for alpha&#10;Version v.0.4_beta_early_access">
-      <created>1536074119534</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
+    <task id="LOCAL-00145" summary="- Added Konsultacijos document&#10;- Fixed issues &#10;- different styles by types">
+      <created>1558949966857</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
       <option name="project" value="LOCAL" />
-      <updated>1536074119535</updated>
+      <updated>1558949966858</updated>
     </task>
-    <task id="LOCAL-00086" summary="Updated some fixes for alpha&#10;Version v.0.4_beta_early_access">
-      <created>1536080385444</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
+    <task id="LOCAL-00146" summary="- Added Konsultacijos document&#10;- Fixed issues &#10;- different styles by types">
+      <created>1558950175882</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
       <option name="project" value="LOCAL" />
-      <updated>1536080385445</updated>
+      <updated>1558950175882</updated>
     </task>
-    <task id="LOCAL-00087" summary="Updated some fixes for alpha&#10;Version v.0.4_beta_early_access">
-      <created>1536086466332</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
+    <task id="LOCAL-00147" summary="- Added Konsultacijos document&#10;- Fixed issues &#10;- different styles by types">
+      <created>1558950611303</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
       <option name="project" value="LOCAL" />
-      <updated>1536086466333</updated>
+      <updated>1558950611303</updated>
     </task>
-    <task id="LOCAL-00088" summary="Updated some fixes for alpha&#10;Version v.0.4_beta_early_access">
-      <created>1536092535943</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
+    <task id="LOCAL-00148" summary="- Added Konsultacijos document&#10;- Fixed issues &#10;- different styles by types">
+      <created>1558951471530</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
       <option name="project" value="LOCAL" />
-      <updated>1536092535944</updated>
+      <updated>1558951471530</updated>
     </task>
-    <task id="LOCAL-00089" summary="Alpha 1.0v">
-      <created>1536093271654</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
+    <task id="LOCAL-00149" summary="- Added Konsultacijos document&#10;- Fixed issues &#10;- different styles by types">
+      <created>1559024648132</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
       <option name="project" value="LOCAL" />
-      <updated>1536093271654</updated>
+      <updated>1559024648132</updated>
     </task>
-    <task id="LOCAL-00090" summary="Alpha 1.0v">
-      <created>1536093753062</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
+    <task id="LOCAL-00150" summary="- Added Konsultacijos document&#10;- Fixed issues &#10;- different styles by types">
+      <created>1559030074979</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
       <option name="project" value="LOCAL" />
-      <updated>1536093753062</updated>
+      <updated>1559030074979</updated>
     </task>
-    <task id="LOCAL-00091" summary="Alpha 1.0v">
-      <created>1536093760152</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
+    <task id="LOCAL-00151" summary="- Added Local scripts">
+      <created>1559034320360</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
       <option name="project" value="LOCAL" />
-      <updated>1536093760152</updated>
+      <updated>1559034320360</updated>
     </task>
-    <task id="LOCAL-00092" summary="Alpha 1.0v">
-      <created>1536094251066</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
+    <task id="LOCAL-00152" summary="- Added Local scripts">
+      <created>1559046968829</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
       <option name="project" value="LOCAL" />
-      <updated>1536094251066</updated>
+      <updated>1559046968832</updated>
     </task>
-    <task id="LOCAL-00093" summary="Alpha 1.0v">
-      <created>1536094409453</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
+    <task id="LOCAL-00153" summary="- Added Local scripts">
+      <created>1559050900283</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
       <option name="project" value="LOCAL" />
-      <updated>1536094409453</updated>
+      <updated>1559050900283</updated>
     </task>
-    <task id="LOCAL-00094" summary="cccc">
-      <created>1536121895917</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
+    <task id="LOCAL-00154" summary="- Added Local scripts">
+      <created>1559051148387</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
       <option name="project" value="LOCAL" />
-      <updated>1536121895917</updated>
+      <updated>1559051148387</updated>
     </task>
-    <task id="LOCAL-00095" summary="cccc">
-      <created>1536122493360</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
+    <task id="LOCAL-00155" summary="- Added Local scripts">
+      <created>1559055306493</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
       <option name="project" value="LOCAL" />
-      <updated>1536122493360</updated>
+      <updated>1559055306494</updated>
     </task>
-    <task id="LOCAL-00096" summary="cccc">
-      <created>1536429786311</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
+    <task id="LOCAL-00156" summary="- Release Candidate &#10;- Fixed memory leak!">
+      <created>1559108299002</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
       <option name="project" value="LOCAL" />
-      <updated>1536429786311</updated>
+      <updated>1559108299003</updated>
     </task>
-    <task id="LOCAL-00097" summary="update 2018 pirmas ketvirtis">
-      <created>1536759637295</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
+    <task id="LOCAL-00157" summary="- Release Candidate &#10;- Fixed memory leak!">
+      <created>1559108524949</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
       <option name="project" value="LOCAL" />
-      <updated>1536759637296</updated>
+      <updated>1559108524949</updated>
     </task>
-    <task id="LOCAL-00098" summary="update 2018 pirmas ketvirtis added foto">
-      <created>1537450820339</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
+    <task id="LOCAL-00158" summary="- Release Candidate &#10;- Fixed memory leak!">
+      <created>1559109008167</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
       <option name="project" value="LOCAL" />
-      <updated>1537450820339</updated>
+      <updated>1559109008167</updated>
     </task>
-    <task id="LOCAL-00099" summary="update 2018 pirmas ketvirtis added foto">
-      <created>1537456329848</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
+    <task id="LOCAL-00159" summary="Informacinis stendas v2.0-beta&#10;-Fixed bugs!!">
+      <created>1559226050211</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
       <option name="project" value="LOCAL" />
-      <updated>1537456329849</updated>
+      <updated>1559226050212</updated>
     </task>
-    <task id="LOCAL-00100" summary="update 2018 pirmas ketvirtis added foto, added savaites info">
-      <created>1537966976983</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
+    <task id="LOCAL-00160" summary="Informacinis stendas v2.0-beta&#10;-Fixed bugs!!">
+      <created>1559279009846</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
       <option name="project" value="LOCAL" />
-      <updated>1537966976986</updated>
+      <updated>1559279009847</updated>
     </task>
-    <task id="LOCAL-00101" summary="update 2018 pirmas ketvirtis added foto, added savaites info">
-      <created>1538492684630</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
+    <task id="LOCAL-00161" summary="Informacinis stendas v2.0-beta&#10;-Removed aud. word teachers without classroom">
+      <created>1559279856765</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
       <option name="project" value="LOCAL" />
-      <updated>1538492684631</updated>
+      <updated>1559279856765</updated>
     </task>
-    <task id="LOCAL-00102" summary="Added new blue style theme">
-      <created>1538946397761</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
+    <task id="LOCAL-00162" summary="Informacinis stendas v2.0-beta&#10;-Removed aud. word teachers without classroom">
+      <created>1559314134012</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
       <option name="project" value="LOCAL" />
-      <updated>1538946397761</updated>
+      <updated>1559314134013</updated>
     </task>
-    <task id="LOCAL-00103" summary="Added Information text &#10;Added new Feature Schedules for Lectures">
-      <created>1540420603032</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
+    <task id="LOCAL-00163" summary="Informacinis stendas v2.0-beta&#10;-Removed aud. word teachers without classroom">
+      <created>1559507573537</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
       <option name="project" value="LOCAL" />
-      <updated>1540420603032</updated>
+      <updated>1559507573538</updated>
     </task>
-    <task id="LOCAL-00104" summary="Added Information text &#10;Added new Feature Schedules for Lectures&#10;links v1.0">
-      <created>1540472615546</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
+    <task id="LOCAL-00164" summary="Informacinis stendas v2.0-beta&#10;- Pridėta savaitės keitimo galimybė per duomenų bazę.&#10;- Pakeistas stilius">
+      <created>1559547407082</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
       <option name="project" value="LOCAL" />
-      <updated>1540472615547</updated>
+      <updated>1559547407083</updated>
     </task>
-    <task id="LOCAL-00105" summary="Added Information text &#10;Added new Feature Schedules for Lectures&#10;links v1.0">
-      <created>1540477844153</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
+    <task id="LOCAL-00165" summary="Informacinis stendas v2.0-beta&#10;- onClick visual bug fixed">
+      <created>1559547684072</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
       <option name="project" value="LOCAL" />
-      <updated>1540477844153</updated>
+      <updated>1559547684073</updated>
     </task>
-    <task id="LOCAL-00106" summary="Added Information text &#10;Added new Feature Schedules for Lectures&#10;Mini style updates v1.1">
-      <created>1540544580427</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
+    <task id="LOCAL-00166" summary="Informacinis stendas v2.0-beta&#10;- onClick visual bug fixed">
+      <created>1559550769916</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
       <option name="project" value="LOCAL" />
-      <updated>1540544580428</updated>
+      <updated>1559550769917</updated>
     </task>
-    <task id="LOCAL-00107" summary="tidy up some code&#10;v1.9 alpha">
-      <created>1541009361009</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
+    <task id="LOCAL-00167" summary="Informacinis stendas v2.0-beta&#10;- onClick visual bug fixed">
+      <created>1559552568852</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
       <option name="project" value="LOCAL" />
-      <updated>1541009361009</updated>
+      <updated>1559552568853</updated>
     </task>
-    <task id="LOCAL-00108" summary="tidy up some code&#10;v2.0 alpha">
-      <created>1541528796782</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
+    <task id="LOCAL-00168" summary="Informacinis stendas v2.0-beta&#10;- Back to main page switched to CLICK EVENT &#10;- Instead reload page -&gt; changed 1 hour when updating data from web.">
+      <created>1559592513809</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
       <option name="project" value="LOCAL" />
-      <updated>1541528796784</updated>
+      <updated>1559592513809</updated>
     </task>
-    <task id="LOCAL-00109" summary="tidy up some code&#10;v2.1 alpha">
-      <created>1541963810374</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
+    <task id="LOCAL-00169" summary="Informacinis stendas v2.0-beta&#10;- Back to main page switched to CLICK EVENT &#10;- Instead reload page -&gt; changed 1 hour when updating data from web.">
+      <created>1559804638011</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
       <option name="project" value="LOCAL" />
-      <updated>1541963810375</updated>
+      <updated>1559804638012</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="309211000" />
+    <option name="totallyTimeSpent" value="477426000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -757,21 +814,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="96" y="206" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15384616" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24920969" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49791667" weight="0.32980973" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49791667" weight="0.39957717" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49791667" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.48366702" weight="0.13542795" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4710579" visible="true" weight="0.14332604" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4710579" weight="0.2990249" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5231823" side_tool="true" weight="0.18418202" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4768177" weight="0.18418202" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -780,20 +836,21 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26238146" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13962065" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49791667" weight="0.32980973" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49791667" weight="0.39957717" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49791667" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.48366702" weight="0.13651137" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5231823" side_tool="true" visible="true" weight="0.18418202" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4768177" visible="true" weight="0.18418202" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4710579" weight="0.34860885" />
-      <window_info anchor="bottom" id="TypeScript" order="10" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.48366702" weight="0.13542795" />
+      <window_info anchor="bottom" id="TypeScript" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4710579" weight="0.2990249" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5231823" side_tool="true" weight="0.18418202" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4768177" weight="0.18418202" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -802,24 +859,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Prideti paskaitu laikai automatiskai besikeiciantys :)" />
-    <MESSAGE value="added IDLE TIMERIS :)" />
-    <MESSAGE value="added IDLE TIMERIS 10 min :)" />
-    <MESSAGE value="fixed style added buttons :)" />
-    <MESSAGE value="NEED FIX BUG WITH DATE PARSE WHEN SELECTING" />
-    <MESSAGE value="Updated style, next step for alpha version iteration" />
-    <MESSAGE value="FINAL WITH BUG FIXED FOR DATE AND MONTH" />
-    <MESSAGE value="Major Changes incomming &#10;Version v.1.9_alpha_RC" />
-    <MESSAGE value="Major Changes incomming styleFIX &#10;Version v.1.9_alpha_RC" />
-    <MESSAGE value="Updated some fixes for alpha&#10;Version v.0.1_alpha" />
-    <MESSAGE value="Updated some fixes for alpha&#10;Version v.0.2_alpha" />
-    <MESSAGE value="Updated some fixes for alpha&#10;Version v.0.3_pre_alpha" />
-    <MESSAGE value="Updated some fixes for alpha&#10;Version v.0.4_beta_early_access" />
-    <MESSAGE value="Alpha 1.0v" />
     <MESSAGE value="cccc" />
     <MESSAGE value="update 2018 pirmas ketvirtis" />
     <MESSAGE value="update 2018 pirmas ketvirtis added foto" />
@@ -831,12 +871,23 @@
     <MESSAGE value="tidy up some code&#10;v1.9 alpha" />
     <MESSAGE value="tidy up some code&#10;v2.0 alpha" />
     <MESSAGE value="tidy up some code&#10;v2.1 alpha" />
-    <option name="LAST_COMMIT_MESSAGE" value="tidy up some code&#10;v2.1 alpha" />
+    <MESSAGE value="tidy up some code&#10;- fixed loading list before enter to list" />
+    <MESSAGE value="- Added Bundle&#10;- Crawling more data" />
+    <MESSAGE value="Crawler file" />
+    <MESSAGE value="UPDADED REMOVED BUNDLE" />
+    <MESSAGE value="UPDADED REMOVED BUNDLE&#10;- Added new style to table ect" />
+    <MESSAGE value="UPDADED REMOVED BUNDLE&#10;- Keyboard style and button" />
+    <MESSAGE value="- Added Konsultacijos document&#10;- Fixed issues &#10;- different styles by types" />
+    <MESSAGE value="- Added Local scripts" />
+    <MESSAGE value="- Release Candidate &#10;- Fixed memory leak!" />
+    <MESSAGE value="Informacinis stendas v2.0-beta&#10;-Fixed bugs!!" />
+    <MESSAGE value="Informacinis stendas v2.0-beta&#10;-Removed aud. word teachers without classroom" />
+    <MESSAGE value="Informacinis stendas v2.0-beta&#10;- Pridėta savaitės keitimo galimybė per duomenų bazę.&#10;- Pakeistas stilius" />
+    <MESSAGE value="Informacinis stendas v2.0-beta&#10;- onClick visual bug fixed" />
+    <MESSAGE value="Informacinis stendas v2.0-beta&#10;- Back to main page switched to CLICK EVENT &#10;- Instead reload page -&gt; changed 1 hour when updating data from web." />
+    <option name="LAST_COMMIT_MESSAGE" value="Informacinis stendas v2.0-beta&#10;- Back to main page switched to CLICK EVENT &#10;- Instead reload page -&gt; changed 1 hour when updating data from web." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/moment/min/locales.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/vanillaCalendar.js" />
     <entry file="file://$PROJECT_DIR$/dist/vanillaCalendar.css" />
     <entry file="file://$PROJECT_DIR$/src/vanillaCalendar.css" />
@@ -855,18 +906,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/images/up.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/popper.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/all.css">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/firebase.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -900,68 +939,14 @@
     <entry file="file://$PROJECT_DIR$/docs/js/demo.js" />
     <entry file="file://$PROJECT_DIR$/js/jquery.keyboard.extension-all.js" />
     <entry file="file://$PROJECT_DIR$/css/keyboard.css" />
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/aria.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="797" column="22" selection-start-line="797" selection-start-column="22" selection-end-line="797" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/aria.rnc" />
     <entry file="file://$PROJECT_DIR$/images/offlinestatus.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" selection-start-line="4" selection-end-line="4" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pwabuilder-sw-register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pikaday.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pwabuilder-sw.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="43" selection-start-column="43" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -972,49 +957,183 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/offline.html">
+    <entry file="file://$PROJECT_DIR$/node_modules/request-promise/lib/rp.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        <state relative-caret-position="306">
+          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
+    <entry file="file://$PROJECT_DIR$/pwabuilder-sw.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+        <state relative-caret-position="-3257">
+          <caret column="43" selection-start-column="43" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pikaday.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="68">
+            <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="248" column="16" selection-start-line="248" selection-start-column="16" selection-end-line="248" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298622">
+          <caret line="17579" column="12" selection-start-line="17579" selection-start-column="12" selection-end-line="17579" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/offline.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.mousewheel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/popper.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/d3.v5.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
-          <caret line="2212" selection-start-line="2212" selection-end-line="2212" />
+        <state relative-caret-position="129">
+          <caret line="332" column="11" lean-forward="true" selection-start-line="332" selection-start-column="11" selection-end-line="332" selection-end-column="11" />
           <folding>
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#1;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1541963524280" expanded="true" signature="11378:11471" ph="..." />
-            <marker date="1541963524280" expanded="true" signature="15968:16012" ph="..." />
-            <marker date="1541963524280" expanded="true" signature="16284:16425" ph="..." />
-            <marker date="1541963524280" expanded="true" signature="16474:16490" ph="..." />
-            <marker date="1541963524280" expanded="true" signature="16619:16680" ph="..." />
-            <marker date="1541963524280" expanded="true" signature="16803:16819" ph="..." />
-            <marker date="1541963524280" expanded="true" signature="106739:106758" ph="..." />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9741">
+          <caret line="573" column="26" selection-start-line="573" selection-start-column="26" selection-end-line="573" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/all.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="82" selection-start-line="4" selection-start-column="82" selection-end-line="4" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/load.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/live.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>

@@ -5,10 +5,10 @@ let keyboard = new Keyboard({
     onKeyPress: button => onKeyPress(button),
     layout: {
         default: [
-            "\u0105 \u010D \u0119 \u0117 \u012F \u0161 \u0173 \u016B \u017E {bksp}  ",
+            "\u0105 \u010D \u0119 \u0117 \u012F \u0161 \u0173 \u016B \u017E {bksp} ",
             "q w e r t y u i o p 7 8 9",
             "\ a s d f g h j k l 4 5 6",
-            "\ z x c v b n m , 0 1 2 3"
+            "z x c v b n m . , 0 1 2 3"
         ]
     },
     display: {
@@ -22,6 +22,25 @@ let keyboard = new Keyboard({
     layoutName: "default",
     theme: "hg-theme-default emoji-theme"
 });
+
+
+let $closeButton = $('div[data-skbtnuid="default-r0b10"]');
+$('div[data-skbtnuid="default-r0b10"] span').text('X');
+
+$closeButton.css({
+    'background-color':'red',
+    'color':'white',
+    'font-weight':'900'});
+
+$closeButton.click(function () {
+    //$('input.quicksearch').val(' ');
+
+
+
+    $('.simple-keyboard').hide();
+});
+
+
 
 /**
  * Update simple-keyboard when input is changed directly

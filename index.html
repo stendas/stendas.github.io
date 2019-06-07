@@ -12,429 +12,201 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
           integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+
+    <!--http://learnjsdata.com/read_data.html BEST LIB READ FILES-->
+
+
     <link rel="stylesheet" href="css/style.css">
+
+
     <link rel="manifest" href="/manifest.json">
+    <!--<script src="bundle.js"></script>-->
+    <script src="js/d3.v5.min.js"></script>
+
+    <!--<script src="https://d3js.org/d3.v5.min.js" ></script>-->
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <script src="firebase.js"></script>
     <script src="jquery-1.10.2.js"></script>
     <script src="pikaday.js"></script>
     <script src="moment/min/moment.min.js"></script>
     <script src="moment/min/moment-with-locales.min.js"></script>
-
-
-
-
-
-
     <script src="pwabuilder-sw-register.js"></script>
 
-
-    <style>
-
-
-        <!--PRADZIA KLAVIATUROS STILIUS-->
-        input#simple {
-            width: 100%; height: 200px; padding: 20px; font-size: 20px; border: none;
-        }
-        .simple-keyboard.hg-theme-default .hg-button {
-            height:200px;
-            border: 2px solid #0062cc;
-        }
-        .hg-standardBtn{
-            max-width:200px;
-        }
-
-        .hg-standardBtn span{
-            font-size:100px;
-        }
-        .simple-keyboard.hg-theme-default .hg-button span{
-            font-size:100px;
-        }
+    <!--<script src='dist/jquery.min.js'></script>-->
+    <script src='dist/isotope.pkgd.js'></script>
+    <script src="js/index.js"></script>
+    <!--<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>-->
 
 
-        <!--KLAVIATUROS STILIUS END-->
+    <!--<script>-->
+    <!--// Firbease Init-->
+    <!--const config = {-->
+    <!--apiKey: "AIzaSyCRYVIHl_orktaBMwsmlQtMcOaeGO0FTQI",-->
+    <!--authDomain: "eif-courses.firebaseapp.com",-->
+    <!--databaseURL: "https://eif-courses.firebaseio.com",-->
+    <!--projectId: "eif-courses",-->
+    <!--storageBucket: "eif-courses.appspot.com",-->
+    <!--messagingSenderId: "535363326769"-->
+    <!--};-->
+    <!--firebase.initializeApp(config);-->
+
+    <!--</script>-->
 
 
+    <!--// CORS BLOKAVIMUI: https://app.requestly.in/rules/-->
 
-                        iframe#InnerIframe{
+    <!--SKRIPTAS UZKRAUTI DESTYTOJAMS IS WEBO-->
+    <script>
+        $(document).ready(function () {
 
-                            background:
-                                    url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100% 100%"><text fill="%23111111" x="50%" y="50%" font-family="\'Lucida Grande\', sans-serif" font-size="100pt" text-anchor="middle">TVARKARAŠTIS... RUOŠIAMAS</text></svg>') 0px 0px no-repeat;
+
+            $('.grid').hide();
+            let csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3Ir7o171E-tSFv4PJXvINjZvuBwin6cTi3eqlwHwH_sLwrtuSrJqn8WW4VFZYJs4kD1Eaqm3iYBus/pub?output=csv";
+            $('.grid').html("");
+            d3.csv(csvUrl).then(function (data) {
+                localStorage.setItem("konsultacijos", JSON.stringify(data));
+            });
+
+            fetch('https://vikoeif.edupage.org/timetable/').then(function (response) {
+                return response.text();
+            }).then(function (string) {
+                let matched = string.match(/{"table":"teachers",[\w\W]*?\(-a\)"}]}/gm);
+                // console.log(matched[0]);
+                localStorage.setItem('dest', matched[0]);
+            }).catch(function (err) {
+                console.log('Fetch Error', err);
+            });
+            //window.localStorage.removeItem('dest');
+            //window.localStorage.removeItem('konsultacijos');
+
+
+            // $.get('https://vikoeif.edupage.org/timetable/').success(function(data){
+            //     let matched = data.match(/{"table":"teachers",[\w\W]*?\(-a\)"}]}/gm);
+            //     //for (let k in matched[0]) {
+            //     localStorage.setItem('dest', matched[0]);
+            //     // console.log(JSON.parse(matched[0]).rows[k].short,
+            //     //     JSON.parse(matched[0]).rows[k].id,
+            //     //     "https://vikoeif.edupage.org/timetable/view.php?teacher=" + JSON.parse(matched[0]).rows[k].id.toString() + "");
+            //
+            //     // }
+            //
+            // });
+
+
+            const konsultacijos = JSON.parse(localStorage.getItem('konsultacijos'));
+            const destytojai = JSON.parse(localStorage.getItem('dest')).rows;
+
+
+            // TIPAS: 1 - > PATALPA, 2-> DARBUOTOJAS, 3 -> DESTYTOJAS
+            for (var k in konsultacijos) {
+
+                //console.log(k);
+                // KABINETAI
+                if (konsultacijos[k].tipas.toString() === "1") {
+                    var $Item1 = $("<div class='element-item transition metal' data-category='transition'>\n" +
+                        "<div class='kabibetas'>" + konsultacijos[k].kabinetas.toString() + " kab.</div>\n" +
+                        "<ul class='list-group'>\n" +
+                        "<li class='list-group-item' align='center' style='top: -20px; font-size:x-large;'>\n" + konsultacijos[k].vardas.toUpperCase().toString() + "</li>\n" +
+                        "</ul>\n" +
+                        "</div>\n");
+
+                    $('.grid').prepend($Item1)
+                        .isotope('reloadItems').isotope({sortBy: 'original-order'});
+                }
+                // DARBUOTOJAI
+                if (konsultacijos[k].tipas.toString() === "2") {
+
+                    var $Item2 = $('      <div class="element-item transition metal" data-category="transition">' +
+                        '<img src="' + konsultacijos[k].foto.toString() + '"\n' +
+                        '        align="left" height="400px">\n' +
+                        '            <ul class="list-group">\n' +
+                        '           <li class="list-group-item">' + konsultacijos[k].vardas.toString() + '</li>\n' +
+                        '       <li class="list-group-item">' + '<span style="font-weight: 900;\n' +
+                        '    color: #2b1195;\n' +
+                        '    font-size: x-large;">' + konsultacijos[k].kabinetas.toString() + ' kab.</span></li>\n' +
+                        '            <li class="list-group-item">' + konsultacijos[k].laikas.toString() + '\n' +
+                        '            </li>\n' +
+                        '      </ul>\n' +
+                        '      </div>');
+
+                    $('.grid').prepend($Item2)
+                        .isotope('reloadItems').isotope({sortBy: 'original-order'});
+
+                }
+                // DESTYTOJU KORTELES ATVAIZDAVIMAS
+                for (var j in destytojai) {
+                    if (destytojai[j].lastname.includes(konsultacijos[k].vardas)) {
+
+                        if (konsultacijos[k].kabinetas === "") {
+                            var $Item6 = $('      <div class="element-item transition metal" data-category="transition">' +
+                                '<img src="' + konsultacijos[k].foto.toString() + '"\n' +
+                                '        align="left" height="400px">\n' +
+                                '            <ul class="list-group">\n' +
+                                '           <li class="list-group-item">' + destytojai[j].firstname.toString() + ' ' + destytojai[j].lastname.toString() + '</li>\n' +
+                                '            <li class="list-group-item">' + konsultacijos[k].laikas.toString() +
+                                '            </li>\n' +
+                                '            <li class="list-group-item">\n' +
+                                '           <div class="links">\n' +
+                                '            <a class="openpop" href="" id="' + "https://vikoeif.edupage.org/timetable/view.php?teacher=" + destytojai[j].id.toString() + '"><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>\n' +
+                                '       </div>\n' +
+                                '        </li>\n' +
+                                '      </ul>\n' +
+                                '      </div>');
+
+                            $('.grid').prepend($Item6)
+                                .isotope('reloadItems').isotope({sortBy: 'original-order'});
+                        } else {
+                            var $Item3 = $('      <div class="element-item transition metal" data-category="transition">' +
+                                '<img src="' + konsultacijos[k].foto.toString() + '"\n' +
+                                '        align="left" height="400px">\n' +
+                                '            <ul class="list-group">\n' +
+                                '           <li class="list-group-item">' + destytojai[j].firstname.toString() + ' ' + destytojai[j].lastname.toString() + '</li>\n' +
+                                '            <li class="list-group-item">' + konsultacijos[k].laikas.toString() + " <br/><strong style='color:#2b1195'>" + konsultacijos[k].kabinetas.toString() + ' aud.</strong>\n' +
+                                '            </li>\n' +
+                                '            <li class="list-group-item">\n' +
+                                '           <div class="links">\n' +
+                                '            <a class="openpop" href="" id="' + "https://vikoeif.edupage.org/timetable/view.php?teacher=" + destytojai[j].id.toString() + '"><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>\n' +
+                                '       </div>\n' +
+                                '        </li>\n' +
+                                '      </ul>\n' +
+                                '      </div>');
+
+                            $('.grid').prepend($Item3)
+                                .isotope('reloadItems').isotope({sortBy: 'original-order'});
                         }
 
+                        //console.log(JSON.parse(localStorage.getItem('konsultacijos'))[i].vardas+" "+destytojai[j].lastname+" "+i);
 
 
-        body {
-            font-family: Verdana, sans-serif;
-            background: #00308f;
-            overflow-x: hidden;
-        }
+                    }
+                }
 
-        a.nav-link.active {
-            background-color: #2639f3 !important;
-            color: white;
-        }
-
-        a.nav-link {
-            background-color: #32383e !important;
-            color: white;
-        }
-
-        .nav-tabs .nav-link {
-            border: 1px solid #ccc;
-            border-top-left-radius: .0rem;
-            border-top-right-radius: .0rem;
-            font-size: 100px;
-        }
-
-        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-            color: white !important;
-        }
-
-        .table-dark td, th {
-            font-size: 70px;
-        }
-
-        .table-dark th {
-            background-color: darkblue !important;
-        }
-
-        .table-striped > tbody > tr:nth-child(odd) > td,
-        .table-striped > tbody > tr:nth-child(odd) > th {
-            background-color: blue;
-        / / Choose your own color here
-        }
-
-        .table-dark {
-            margin-bottom: 120px;
-            background-color: #00308f;
-            margin-top: 650px;
-        }
-
-
-
-
-        .table-striped > tbody > tr:nth-child(even) > td,
-        .table-striped > tbody > tr:nth-child(even) > th {
-            background-color: darkblue;
-        / / Choose your own color here
-        }
-
-        footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: #32383e;
-            color: white;
-            text-align: center;
-        }
-
-        #v-cal .vcal-body, #v-cal .vcal-date {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            border: 1px solid #cccccc;
-        }
-
-        /*STILIUS DARBUOTOJAMS*/
-
-        .filterDiv {
-            float: left;
-            background-color: #2196F3;
-            color: #ffffff;
-            width: 100px;
-            line-height: 100px;
-            text-align: center;
-            margin: 2px;
-            display: none;
-        }
-
-        .show {
-            display: block;
-        }
-
-        .container {
-            margin-top: 20px;
-            overflow: hidden;
-        }
-
-        /* Style the buttons */
-        .btn {
-            border: none;
-            outline: none;
-            padding: 12px 16px;
-            background-color: #f1f1f1;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #ddd;
-        }
-
-        .btn.active {
-            background-color: #666;
-            color: white;
-        }
-
-        .topnav {
-            overflow: hidden;
-            background-color: #e9e9e9;
-        }
-
-        .topnav a {
-            float: left;
-            display: block;
-            color: black;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .topnav a.active {
-            background-color: #2196F3;
-            color: white;
-        }
-
-        .topnav .search-container {
-
-        }
-
-        .topnav input[type=text] {
-            width: 100%;
-            padding: 12px;
-            font-size: 70px;
-        }
-
-        .grid {
-            margin-top: 280px;
-            margin-bottom: 200px;
-            background-color: #cccccc;
-        }
-
-        .topnav .search-container button {
-            float: left;
-            padding: 6px 10px;
-            margin-top: 8px;
-            margin-right: 16px;
-            background: #ddd;
-            font-size: 17px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .topnav .search-container button:hover {
-            background: #ccc;
-        }
-
-        @media screen and (max-width: 600px) {
-            .topnav .search-container {
-                float: none;
             }
 
-            .topnav a, .topnav input[type=text], .topnav .search-container button {
-                float: none;
-                display: block;
-                text-align: left;
-                width: 100%;
-                margin: 0;
-                padding: 14px;
-            }
 
-            .topnav input[type=text] {
-                border: 1px solid #ccc;
-            }
-        }
+            $(".popup").hide();
+            $(".openpop").click(function (e) {
+                e.preventDefault();
+                $('.close_mygtukas').show();
+                window.scrollTo(0, 0);
+                var destytojo_tvarkarascio_URL = e.target.id;
 
-        .fullscreenDiv {
-            background-color: #e8e8e8;
-            width: 100%;
-            height: auto;
-            bottom: 0px;
-            top: 0px;
-            left: 0;
-            position: absolute;
-        }
+                $('.popup').html('<embed class="avoid-clicks" width="1024" heigth="820" id="InnerFrame" src="' + destytojo_tvarkarascio_URL + '">');
+                $(".popup").fadeIn('slow');
 
-        .screensaver {
-            background-color: #e8e8e8;
-            width: 100%;
-            height: auto;
-            bottom: 0px;
-            top: 0px;
-            left: 0;
-            position: absolute;
-        }
+            });
+            $(".close").click(function () {
+                $(this).parent().fadeOut("slow");
+                $('.close_mygtukas').hide();
+                $('.popup').hide();
+                $(".flat-button").trigger('click');
+            });
+        });
+    </script>
 
-        .container {
-            max-width: 100%;
-            padding-right: 0;
-            padding-left: 0;
-        }
-
-        p.active {
-            background-color: #e91e63;
-            color: white;
-        }
-
-
-        .list-group-item:first-child {
-            font-weight: bold;
-        }
-
-        div.row {
-            top: 168px;
-            width: 120%;
-            background-color: #00308f
-        }
-
-        div.row div p {
-            font-size: 47.8px !important;
-
-        }
-
-        div.row div p:first-child {
-            font-size: 200px !important;
-        }
-
-        .menu_virsutinis_prilipes {
-            position: fixed;
-            top: 0;
-            z-index: 10;
-            width: 100%;
-            background-color: #32383e;
-        }
-
-        .paieskos_laukas_zemiau_menu {
-            position: fixed;
-            top: 168px;
-            z-index: 10;
-            width: 100%;
-        }
-
-        .close_mygtukas {
-            position: absolute;
-            top: 300px;
-            z-index: 0;
-            width: 100%;
-        }
-
-
-
-        .savaites_dienos_fiksuotas {
-            position: fixed;
-            top: 5px;
-            z-index: 4500;
-        }
-
-        ::-webkit-scrollbar {
-            width: 70px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: gray;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #32383e !important;
-        }
-
-        ::-webkit-scrollbar-button:vertical:increment {
-            height: 70px;
-            background-color: gray;
-            background-image: url('images/zemyn.png');
-        }
-
-        ::-webkit-scrollbar-button:vertical:decrement {
-            height: 70px;
-            background-color: gray;
-            background-image: url('images/virsun.png');
-
-        }
-
-        .sticky-container {
-            padding-top: 10px;
-            padding-left: 10px;
-            padding-bottom: 10px;
-            padding-right: 3px;
-            position: fixed;
-            top: 60%;
-            right: -10px;
-            width: 200px;
-            height: 200px;
-            z-index: 9999;
-            margin-top: -24px;
-            text-align: center;
-        }
-
-        .sticky-container:active {
-            background-color: transparent;
-            transform: translateY(10px);
-        }
-
-        .sticky-container a {
-            padding: 0 !important;
-            display: block;
-            text-align: left;
-            height: 150px;
-            width: 150px;
-            padding: 8px 16px;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .sticky-container a img {
-            max-height: 100%;
-            margin-left: 15px;
-        }
-
-        * {
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: -moz-none;
-            -o-user-select: none;
-            user-select: none;
-        }
-
-        .text-block {
-            position: absolute;
-            bottom: 0px;
-            right: 0px;
-            background-color: #2b1195;
-            color: white;
-            padding-left: 20px;
-            padding-right: 20px;
-            font-size: 200px;
-            font-weight: bold;
-            height: 490px;
-        }
-
-        div.text-block p {
-            margin-top: 15%;
-        }
-
-        div.element-item.transition > div {
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-
-        .avoid-clicks {
-            pointer-events: none;
-        }
-    </style>
 
     <script>
         function startTime() {
@@ -452,31 +224,7 @@
             let siandien = moment();
             siandien.locale('lt');
             $('#txt').text(siandien.format('YYYY MM DD, dddd,').toUpperCase() + " " + h + ":" + m + ":" + s);
-
-            //$("#txt").html("OFFLINE <span id='status' style='height: 100px; width: 100px; background-color: red; border-radius: 50%;display: inline-block;'></span>"+siandien.format('YYYY MM DD, dddd,').toUpperCase() + " " + h + ":" + m + ":" + s);
-
-            //document.getElementById('txt').innerHTML =+ "GEGUŽĖ 2018, TREČIADIENIS," +h + ":" + m + ":" + s;
-
-//            if (h === 0 && m === 0 && s >= 55) {
-//                location.reload();
-//                let sessionsRef = firebase.database().ref("user-posts/sessions");
-//                sessionsRef.set({
-//                    startedAt: firebase.database.ServerValue.TIMESTAMP
-//                });
-//                //window.location.reload(true);
-//            }
-//
-//            if (h === 5 && m === 58 && s >= 50) {
-//                location.reload();
-//                let sessionsRef = firebase.database().ref("user-posts/sessions");
-//                sessionsRef.set({
-//                    startedAt: firebase.database.ServerValue.TIMESTAMP
-//                });
-//
-//            }
-
             let t = setTimeout(startTime, 500);
-
         }
 
         function checkTime(i) {
@@ -493,10 +241,13 @@
 
 <body onload="startTime();hideKeyboard();">
 
+<!--<script src="app.js"></script>-->
+
 
 <ul class="nav nav-tabs nav-justified red menu_virsutinis_prilipes" id="myTab" role="tablist">
 
-    <li class="nav-item" style="font-weight: bold;">
+    <li class="nav-item" style="font-weight: bold;"><img src="images/eif.jpg" width="50px" style="margin-top:3px;"
+                                                         align="left">
         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
            aria-selected="true"><i class="far fa-edit"></i>LAIKINI PAKEITIMAI</a>
     </li>
@@ -505,25 +256,22 @@
            aria-selected="false"><i class="fas fa-search"></i> DARBUOTOJAI</a>
 
 
-
     </li>
-    <span id='status' style='height: 100px;
-           width: 100px; background-image: url("images/live.png");display: inline-block; margin-top:40px;'></span>
+    <!--<span id='status' style='height: 100px;-->
+    <!--width: 100px; background-image: url("images/live.png");display: inline-block; margin-top:40px;'></span>-->
 
 </ul>
 
 
+<!--<div id="virsun" class="sticky-container" style="top:0;"-->
+<!--onclick="scrollWin(0, -200);">-->
+<!--<i class="fas fa-caret-square-up fa-2x" style="color: #fff90094;"></i>-->
+<!--</div>-->
 
-
-<div id="virsun" class="sticky-container" style="top:40%; background-image: url('images/up.png');
-width: 320px;height: 320px;"
-     onclick="scrollWin(0, -200);">
-</div>
-
-<div id="apacion" class="sticky-container" style=" top: 60%; background-image: url('images/down.png'); width: 320px;
-height:320px;"
-     onclick="scrollWin(0, 200);">
-</div>
+<!--<div id="apacion" class="sticky-container" style="bottom:0;"-->
+<!--onclick="scrollWin(0, 20);">-->
+<!--<i class="fas fa-caret-square-down fa-2x" style="color: #fff90094;"></i>-->
+<!--</div>-->
 
 
 <script>
@@ -531,44 +279,77 @@ height:320px;"
 
     $('#profile-tab').click(function () {
 
+
+        $(".grid").show();
         hideKeyboard();
         $('input.quicksearch').val(' ');
         $("input.quicksearch").attr("placeholder",
             "Darbuotojų paieška, Įveskite pvz. pagal vardą, pavardę, pareigas, kabinetą.").val("").focus().blur();
-        $('div#apacion').css('top', '60%');
-        $('div#virsun').css('top', '40%');
+        // $('div#apacion').css('top', '60%');
+        // $('div#virsun').css('top', '40%');
         $(".popup").hide(); // TODO ADDED NEW CONTENT SU IFRAME ZAIDZIU
         $('.close_mygtukas').hide();
-//        var e = jQuery.Event("keydown", {
-//            keyCode: 13
-//        });
+
+
+        //   console.log(localStorage.getItem('dest'));
+
+        let teach = localStorage.getItem('dest');
+        // JSON.parse(matched[0]).rows[k].short
+        // console.log(teach[0]);
+        // console.log(teach[0]);
+
+
+        // console.log(JSON.parse(localStorage.getItem('dest')).rows[0].short,
+        //     JSON.parse(localStorage.getItem('dest')).rows[0].id,
+        //     "https://vikoeif.edupage.org/timetable/view.php?teacher=" + JSON.parse(localStorage.getItem('dest')).rows[0].id.toString() + "");
+        //
+
+
+        //$('.grid').append();
+
+
+// TODO start
+//         $('.grid').html("");
 //
-//        $('input.quicksearch').on('keydown', function (e) {
-//            if (e.keyCode === 13) {
-//                scan();
-//            }
-//        });
-//
-//        $("input.quicksearch").trigger(e);
-
-
-
+//         for(i in JSON.parse(localStorage.getItem('dest')).rows) {
+//             var $Item = $('      <div class="element-item transition metal" data-category="transition"><img src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&ssl=1"\n' +
+//                 '        align="left" height="400px">\n' +
+//                 '            <ul class="list-group">\n' +
+//                 '           <li class="list-group-item">'+JSON.parse(localStorage.getItem('dest')).rows[i].short.toString()+'</li>\n' +
+//                 '       <li class="list-group-item"> lektorė</li>\n' +
+//                 '            <li class="list-group-item"> Penktadieniais, 9:30 – 11:00 208 kab.\n' +
+//                 '            </li>\n' +
+//                 '            <li class="list-group-item">\n' +
+//                 '           <div class="links">\n' +
+//                 '            <a class="openpop" href="'+"#" +'"\n' +
+//                 '        id="'+"https://vikoeif.edupage.org/timetable/view.php?teacher=" + JSON.parse(localStorage.getItem('dest')).rows[i].id.toString() +'"><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>\n' +
+//                 '       </div>\n' +
+//                 '        </li>\n' +
+//                 '      </ul>\n' +
+//                 '      </div>');
+//             $('.grid').prepend($Item)
+//                 .isotope('reloadItems').isotope({sortBy: 'original-order'});
+//         }
+// TODO END
 
 
     });
 
-    function  scan() {
+    function scan() {
         alert('VALIO');
     }
 
     $('#home-tab').click(function () {
+
+
+        $(".grid").hide();
 //        $('div#apacion').css('top', '400px');
 //        $('div#virsun').css('top', '150px');
         let today = moment();
         $('p.active').removeClass('active'); //Clear all checked class on .size
         $('p#pid' + today.format('DD')).addClass('active'); //Add checked class to current clicked .siz
         readAndDisplayData(today.format('DD').toString());
-
+        hideKeyboard();
     });
 
     function scrollWin(x, y) {
@@ -610,19 +391,25 @@ height:320px;"
             let past_day = Number(today.format('DD') - 1);
 
             // EIF LOGOTIPAS
-            $(".container#savaites_dienos").find('div.row').append('<div style="padding: 20px; border-right: solid 2px grey; background:white;"><img src="images/eif.jpg" width="400px"></div>');
+            //  $(".container#savaites_dienos").find('div.row').append('<div style="padding: 20px; border-right: solid 2px grey; background:white;"><img src="images/eif.jpg" width="200px"></div>');
 
 
             for (let i = 0; i < 8; i++) {
 
-                $(".container#savaites_dienos").find('div.row').append('<div class=".col-xl-" id="' + begin.format('DD') + '"' +
-                    'style="background-color: white; color:black; align-items: center;   \n' +
-                    '                 border:1px solid gray; padding: 5px;">\n' +
-                    '          <p style="font-size: 60px;" align="center" id="pid' + begin.format('DD') + '">' + begin.format('DD') + '</p>\n' +
-                    '          <p style="font-weight: bold; padding:5px; font-size: 20px; color:black;" align="center">' + moment(begin).locale('lt').format('dddd').toUpperCase() + '</p>\n' +
-                    '<div style="font-size: 40px;" align="center" id="stateid' + begin.format('DD') + '">' +
-                    begin.format('MMMM', 'lt').toUpperCase() + '</div>' +
-                    '        </div>');
+
+                // $(".container#savaites_dienos").find('div.row').append('<div class=".col-xl- dayMonth" id="' + begin.format('DD') +'"' +
+                //     '          <p style="font-size: 60px;" align="center" id="pid' + begin.format('DD') + '">' + begin.format('DD') + '</p>\n' +
+                //     '          <p style="font-weight: bold; padding:5px; font-size: 20px; color:black;" align="center">' + moment(begin).locale('lt').format('dddd').toUpperCase() + '</p>\n' +
+                //     '<div style="font-size: 40px;" align="center" id="stateid' + begin.format('DD') + '">' +
+                //     begin.format('MMMM', 'lt').toUpperCase() + '</div>' +
+                //     '        </div>');
+
+                // language=HTML
+                $(".container#savaites_dienos").find("div.row").append('<div class=".col-xl- dayPrimary" id="' + begin.format('DD') + '">\n    ' +
+                    '<div class="dayMonth" align="center" id="stateid' + begin.format('DD') + '">' + begin.format('MMMM', 'lt').toUpperCase() + "</div>" +
+                    '<p class="dayNumber" align="center" id="pid' + begin.format('DD') + '">' + begin.format('DD') + '</p>' +
+                    '<p class="dayString" align="center" id="dayid' + begin.format('DD') + '">' + moment(begin).locale('lt').format('dddd').toUpperCase() + '</p></div>');
+
 
                 if (i === 5 || i === 6) {
                     console.log(begin.format('DD'));
@@ -632,68 +419,84 @@ height:320px;"
 //                $('p#pid' + begin.format('DD')).css({'border': '1px solid grey', "padding":"0",
 //                    "box-sizing": "border-box", "-moz-box-sizing": "border-box", "-webkit-box-sizing": "border-box"});
                 $('div#' + begin.format('DD')).css({'border-right': '2px solid grey'});
-                $('p#pid' + begin.format('DD')).css({'border': '10px solid grey', "padding":"0",
-                    "box-sizing": "border-box", "-moz-box-sizing": "border-box", "-webkit-box-sizing": "border-box"});
+                // $('p#pid' + begin.format('DD')).css({
+                //     'color': 'red'
+                // });
 
-               // -moz-box-sizing: border-box;
+                // -moz-box-sizing: border-box;
                 //-webkit-box-sizing: border-box;
                 begin.add(1, 'd');
 
             }
 
             for (let k = 1; k < 10; k++) {
-                $('div#' + moment().subtract(k, 'days').startOf('day').format('DD')).css({"background-color": "#ccc",
-                    "color": "grey"});
-                if($('div#' + moment().subtract(k, 'days').startOf('day').format('DD')).css({"background-color": "#ccc",
-                        "color": "grey"})){
+                $('div#' + moment().subtract(k, 'days').startOf('day').format('DD')).css({
+                    "background-color": "#ccc",
+                    "color": "grey"
+                });
+                if ($('div#' + moment().subtract(k, 'days').startOf('day').format('DD')).css({
+                    "background-color": "#ccc",
+                    "color": "grey"
+                })) {
 
-                    $('div#' + moment().subtract(k, 'days').startOf('day').format('DD')).css({"background-color": "#ccc",
-                        "color": "grey"}).remove();
+                    $('div#' + moment().subtract(k, 'days').startOf('day').format('DD')).css({
+                        "background-color": "#ccc",
+                        "color": "grey"
+                    }).remove();
 
                     //alert('PRAEJUSI DIENA');
                 }
             }
 
-           // $('div#' + today.format('DD')).css({'border': '7px solid black', "border-radius":"20px"});
+            // $('div#' + today.format('DD')).css({'border': '7px solid black', "border-radius":"20px"});
 
 
-
-
-            $('p#pid' + today.format('DD')).css({'border': '10px solid #e91e63',"box-sizing": "border-box",
-                "-moz-box-sizing": "border-box", "-webkit-box-sizing": "border-box"});
+            // $('p#pid' + today.format('DD')).css({
+            //     'color': 'red'
+            // });
 
             $('p#pid' + today.format('DD')).addClass('active');
+
+            $('p#dayid' + today.format('DD')).addClass('active');
+
+
 
             let siandien = moment();
 
             $('p#pasirinkta_diena').text('' + siandien.format('DD'));
 
-            $('div.row p:nth-child(odd)').click(function (e) {
+            $('div.row p').click(function (e) {
                 let diena = $(e.target).text();
                 $('p#pasirinkta_diena').text(diena);
 
+                // $('p#dayid' + today.format('DD')).removeClass('active');
+
+                $.dienaSelektorius = $('p#dayid' + diena);
+                $('p#dayid' + today.format('DD')).css('color', '#023277');
+
+                // GRID POZIJA KADANGI NUSOKA KAI PASPAUDZIAM
+                $(".grid").css('margin-top', '22px');
+                $("div.popup").css('margin-top', '-87px');
+
                 if ($(e.target).css('color') === 'rgb(128, 128, 128)') {
-                    console.log('Praėjusi diena.')
+                    console.log('Praėjusi diena.');
                 } else {
                     $('p.active').removeClass('active'); //Clear all checked class on .size
                     $('p#pid' + diena).addClass('active'); //Add checked class to current clicked .siz
+
+                    // AKTYVI DIENA
+                    $.dienaSelektorius.removeClass('active');
+                    $.dienaSelektorius.addClass('active');
+
                     readAndDisplayData(diena.toString());
                 }
+                // $('p#dayid' + today.format('DD')).addClass('active');
             });
         </script>
 
 
-
-
-
-
-
-
-
-
-
-
         <div class="container" style="float: left; width: 100%; margin-top: 0px; ">
+
 
             <table class="table table-dark table-striped" id="pakeitimai">
                 <thead>
@@ -706,10 +509,10 @@ height:320px;"
                 </thead>
                 <tbody>
                 <!--<tr>-->
-                    <!--<td>[1] 7<sup>45</sup> - 9<sup>30</sup></td>-->
-                    <!--<td>PI17A [1 pogr.]</td>-->
-                    <!--<td>Marius Gžegoževskis</td>-->
-                    <!--<td>420a</td>-->
+                <!--<td>[1] 7<sup>45</sup> - 9<sup>30</sup></td>-->
+                <!--<td>PI17A [1 pogr.]</td>-->
+                <!--<td>Marius Gžegoževskis</td>-->
+                <!--<td>420a</td>-->
                 <!--</tr>-->
                 <tr>
                     <td colspan="4">INFORMACIJA KRAUNASI...</td>
@@ -717,6 +520,8 @@ height:320px;"
 
                 </tbody>
             </table>
+
+
         </div>
 
         <!--END DESTYTOJU PAKEITIMU SARASAS-->
@@ -726,11 +531,11 @@ height:320px;"
 
     </p>
 
+
     <!--END PAKEITIMAI-->
 
     <!--DESTYYOJAI ARBA DESTYTOJU PAIESKA-->
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
 
 
         <div class="topnav">
@@ -752,14 +557,16 @@ height:320px;"
 
         </div>
 
-        <a class="close_mygtukas" style="background: red; padding: 20px; font-size:80pt;
-        width:180px;color:white;font-weight:bold;border:1px solid grey; margin-left: 2820px;" href="#"> <span
-                style="margin-left:20px;">X</span>
+
+        <a class="close_mygtukas" style="background: red;     font-size: 40pt;
+    width: 80px;color:white;font-weight:bold;border:1px solid grey;" href="#"> <span
+                style="">X</span>
         </a>
 
         <script>
+
             $('.close_mygtukas').hide();
-            $('.close_mygtukas').click(function() {
+            $('.close_mygtukas').click(function () {
                 $('.popup').hide();
                 $('.close_mygtukas').hide();
             });
@@ -770,1511 +577,169 @@ height:320px;"
         <div class="wrapper">
 
 
-            <div class="popup" style="overflow:hidden;">
+            <div class="popup" style="overflow: hidden;display: inherit;">
 
                 <!--<iframe style="margin-top: 90px" src="view.html" width="2900px" height="2000px" id="InnerIframe"-->
-                        <!--scrolling="no">-->
-                    <!--<p>Your browser does not support iframes.</p>-->
+                <!--scrolling="no">-->
+                <!--<p>Your browser does not support iframes.</p>-->
                 <!--</iframe>-->
                 <!--<div id="block" style="position: absolute; top: 0; left: 0; width: 2900px; height:2100px">-->
-                    <!--<a style="margin-top: 290px; background: red; padding: 20px; font-size:40pt;color:white; font-weight: bold;border:1px solid grey;" href="#" class="close">X-->
-                    <!--</a>-->
+                <!--<a style="margin-top: 290px; background: red; padding: 20px; font-size:40pt;color:white; font-weight: bold;border:1px solid grey;" href="#" class="close">X-->
+                <!--</a>-->
 
 
-                <!--</div>-->
-
-
-            </div>
-        </div>
-        <!--IFRAME END-->
-
-
-
-
-        <!--<KLAVIATURA IS APACIOS" />-->
-        <div style="bottom:148px; background: white; position: fixed; z-index: 5000;" class="simple-keyboard"></div>
-
-        <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.min.js"></script>
-        <script src="src/index.js"></script>
-
-
-        <div class="grid">
-
-
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold; margin-right: 410px; position:relative;">
-                    RAŠTINĖ,
-                    DEKANAS
-                </div>
-                <div class="text-block">
-                    <p>214</p>
-                </div>
-            </div>
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    PRODEKANĖ
-                </div>
-                <div class="text-block">
-                    <p>216</p>
-                </div>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition">
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    STUDIJŲ SKYRIAUS VEDĖJA
-                </div>
-                <div class="text-block">
-                    <p>220</p>
-                </div>
-            </div>
-
-
-
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    BIBLIOTEKA
-                </div>
-                <div class="text-block">
-                    <p>424</p>
-                </div>
-            </div>
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    KOMPIUTERIŲ CENTRAS
-                </div>
-                <div class="text-block">
-                    <p>103</p>
-                </div>
-            </div>
-
-
-            <div class="element-item transition metal" data-category="transition">
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    PROGRAMINĖS ĮRANGOS
-                    KATEDRA
-                </div>
-                <div class="text-block">
-                    <p>208</p>
-                </div>
-
-            </div>
-
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    INFORMACINIŲ SISTEMŲ
-                    KATEDRA
-                </div>
-                <div class="text-block">
-                    <p>101</p>
-                </div>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    ELEKTRONIKOS KATEDRA
-                </div>
-                <div class="text-block">
-                    <p>409</p>
-                </div>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold; margin-right: 410px; position:relative; ">
-                    KOMPIUTERIŲ SISTEMŲ IR
-                    TELEKOMUNIKACIJŲ
-                    KATEDRA
-                </div>
-                <div class="text-block">
-                    <p>402</p>
-                </div>
-            </div>
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    ARCHYVAS
-                </div>
-                <div class="text-block">
-                    <p>415</p>
-                </div>
-            </div>
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    ELEKTRONIKOS LABORATORIJŲ VEDĖJAS
-                </div>
-                <div class="text-block">
-                    <p>319</p>
-                </div>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    PARTNERYSTĖS IR PROJEKTŲ SKYRIAUS VEDĖJA
-                </div>
-                <div class="text-block">
-                    <p>217</p>
-                </div>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    PARTNERYSTĖS IR PROJEKTŲ SKYRIAUS VADYBININKĖ
-                </div>
-                <div class="text-block">
-                    <p>220</p>
-                </div>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    ŪKIO SKYRIUS
-                </div>
-                <div class="text-block">
-                    <p>218</p>
-                </div>
-            </div>
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                   MAŽOJI POSĖDŽIŲ SALĖ
-                </div>
-                <div class="text-block">
-                    <p>215</p>
-                </div>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    AULA
-                </div>
-                <div class="text-block">
-                    <p>222</p>
-                </div>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    AKTŲ SALĖ
-                </div>
-                <div class="text-block">
-                    <p>327</p>
-                </div>
-            </div>
-
-
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    STUDENTŲ ATSTOVYBĖ
-                </div>
-                <div class="text-block">
-                    <p>501</p>
-                </div>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    PARUOŠIAMASIS
-                </div>
-                <div class="text-block">
-                    <p>107</p>
-                </div>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    VK BIBLIOTEKA
-                </div>
-                <div class="text-block">
-                    <p>108</p>
-                </div>
-            </div>
-            <div class="element-item transition metal" data-category="transition">
-
-                <div align="center" style="font-size:80px; font-weight: bold;margin-right: 410px; position:relative;">
-                    MUZIEJUS
-                </div>
-                <div class="text-block">
-                    <p>211</p>
-                </div>
-            </div>
-
-
-
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/s-brusokaite.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Sandra Brusokaitė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Penktadieniais, 9:30 – 11:00 208 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*4" href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/m-gzegozevskis.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Marius Gžegoževskis</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Pirmadieniais, 9:30 – 11:00 420A kab.</li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1007" href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/s-kubilinskiene.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dr. Svetlana Kubilinskienė</li>
-                    <li class="list-group-item"> docentė</li>
-                    <li class="list-group-item"> Pirmadieniais, 9:30 – 11:00 208 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1015" href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/v-kuklierius.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Virgilijus Kuklierius</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Penktadieniais, 11:00 - 12:00 208 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1016"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/m-liogys.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dr. Mindaugas Liogys</li>
-                    <li class="list-group-item"> docentas, Programinės įrangos katedros vedėjas</li>
-                    <li class="list-group-item"> Trečiadieniais, 11:45 - 13:15 208 kab.</li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1020"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/v-liubinas.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Vaidas Liubinas</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop avoid-clicks"
-                               id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1023"><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/j-liutvinaviciene.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Jelena Liutvinavičienė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Pirmadieniais, 13:30 - 15:00 208 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1063" href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition">
-                <img
-                        src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&amp;ssl=1"
-                        align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Ramunė Mikonienė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1031"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/a-morkuniene.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Alma Morkūnienė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1032"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/o-raudone.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Orūnė Raudonė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Antradieniais, 15:15 - 16:45 208 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1040"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/a-savickaite.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Airina Savickaitė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Ketvirtadieniais, 13:30 - 15:00 208 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1042"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/l-savulioniene.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dr. Loreta Savulionienė</li>
-                    <li class="list-group-item"> docentė, prodekanė</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                             <i class="far fa-calendar"></i> Paskaitų tvarkaraštis
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/d-savulionis.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dainius Savulionis</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Pirmadieniais, 15:15 - 16:45 317A kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1043"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/t-silvanavicius.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Tomas Silvanavičius</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop avoid-clicks"
-                               id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*54"><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/r-tumasonis.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dr. Romanas Tumasonis</li>
-                    <li class="list-group-item"> docentas, dekanas</li>
-                    <li class="list-group-item"> Trečiadieniais, 8:00 - 9:00  214 kab
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                         <i class="far fa-calendar"></i> Paskaitų tvarkaraštis
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/j-vaiciulyte.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Jūratė Vaičiulytė</li>
-                    <li class="list-group-item">lektorė</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*58"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&amp;ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">E. Valavičius</li>
-                    <li class="list-group-item">lektorius</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*59"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/j-zailskas.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Justinas Zailskas</li>
-                    <li class="list-group-item">lektorius</li>
-                    <li class="list-group-item">Trečiadieniais, 9:30 - 11:00 208 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*63"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
             </div>
 
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/t-kasperavicius.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Tomas Kasperavičius</li>
-                    <li class="list-group-item"> Elektronikos laboratorijų vedėjas</li>
-                    <li class="list-group-item"> Ketvirtadieniais, 11:45 - 13:15 313 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1061" href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/a-kirdeikiene.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Aliona Kirdeikienė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item">  Antradieniais, 13:30 - 15:00 412 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1010"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/a-lucun.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dr. Andžej Lučun</li>
-                    <li class="list-group-item"> docentas</li>
-                    <li class="list-group-item"> Pirmadieniais, 9:30 - 11:00 330 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1024"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/e-macerauskas.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Eugenijus Mačerauskas</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1025"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/vaidotas_matutis.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Vaidotas Matutis</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Pirmadieniais, 9:30 - 11:00 405 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1028"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&amp;ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Vytautas Netikša</li>
-                    <li class="list-group-item"> lektorius, kompiuterių centro vedėjas</li>
-                    <li class="list-group-item"> Pirmadieniais, 13:30 - 15:00 103A kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop avoid-clicks"
-                               id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1034"><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/p-sakalys.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Paulius Šakalys</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Pirmadieniais, 7:45 - 9:15 315 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*52"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/r-urbonavicius.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Rimantas Urbonavičius</li>
-                    <li class="list-group-item">  lektorius</li>
-                    <li class="list-group-item"> Pirmadieniais, 9:30 - 11:00 408 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1050"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/s-volosevicius.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Sergejus Volosevičius</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop avoid-clicks"
-                               id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*61"><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/m-baltramaitiene-1.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Margarita Baltramaitienė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Trečiadieniais, 13:30 - 15:00 417 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-992" href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/g-braziunas.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dr. Gintautas Bražiūnas</li>
-                    <li class="list-group-item"> docentas</li>
-                    <li class="list-group-item"> Antradieniais, 9:30 - 11:00 402 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1058"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/s-bucys.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Stasys Bučys</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Penktadieniais, 11:45 - 13:15 403 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-995"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/r-ceniene.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Regina Čenienė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Ketvirtadieniais, 15:15 - 16:45 420 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-997"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/j-civilis.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Jonas Čivilis</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Penktadieniais, 11:45 - 13:15 403 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-998"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/e-garla.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Edmuntas Garla</li>
-                    <li class="list-group-item"> lektorius </li>
-                    <li class="list-group-item"> Pirmadieniais, 9:30 - 11:30 413 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1004"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/e-gasiuniene.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Elena Gasiūnienė</li>
-                    <li class="list-group-item"> lektorė, Kompiuterių sistemų ir telekomunikacijų katedros
-                    vedėja</li>
-                    <li class="list-group-item"> Trečiadieniais, 9:30 - 11:00 402 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop avoid-clicks"
-                               id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1005"><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/s-levickiene.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Stasė Levickienė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Antradieniais, 11:00 - 12:30 304 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop avoid-clicks"
-                               id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1018"><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/l-mazeiko.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Leslav Mažeiko</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Antradieniais, 13:30 - 15:00 413 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1029"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/d-neverbickaite.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dalė Neverbickaitė</li>
-                    <li class="list-group-item"> lektorė, studijų skyriaus vedėja</li>
-                    <li class="list-group-item"> Pirmadieniais, 15:15 - 16:45 220 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*45"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/a-slimanaviciene.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Anželika Slimanavičienė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item">Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1044"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/a-danileviciute.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Asta Danilevičiūtė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Antradieniais, 15:15 - 16:45 101 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop avoid-clicks"
-                               id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-999"><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/j-dauksevic.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Jelena Daukševič</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item">  Penktadieniais, 13:30 - 15:00 420A kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1000"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/l-zvinyte.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dr. Laura Gžegoževskė</li>
-                    <li class="list-group-item"> docentė</li>
-                    <li class="list-group-item"> Ketvirtadieniais, 11:45 - 13:15 420A kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*14" href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&amp;ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Valdona Judickaitė–Žukovskė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Ketvirtadieniais, 11:45 - 13:15 101 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1009"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&amp;ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dr. Julija Karaliūnaitė</li>
-                    <li class="list-group-item"> docentė</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1011"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/i-liusicyna.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Irina Liušicyna</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1021"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/t-liogiene.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dr. Tatjana Liogienė</li>
-                    <li class="list-group-item">docentė</li>
-                    <li class="list-group-item"> Penktadieniais, 11:00 - 12:30 101 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*26"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/j-maceniene.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Jolanta Mačėnienė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Antradieniais, 11:45 - 13:15 101 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1026"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/d-matusevicius.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Donatas Matusevičius</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop avoid-clicks"
-                               id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*35"><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&amp;ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Aistė Petrauskė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <i class="far fa-calendar"></i> Paskaitų tvarkaraštis
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&amp;ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dr. Birutė Pliuskuvienė</li>
-                    <li class="list-group-item"> docentė</li>
-                    <li class="list-group-item"> Antradieniais 8:30 - 9:15 101 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop avoid-clicks" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*46"><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/n-pozniak.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Natalija Pozniak</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*47"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/a-sadauskis.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Andriejus Sadauskis</li>
-                    <li class="list-group-item"> lektorius</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                         <i class="far fa-calendar"></i> Paskaitų tvarkaraštis
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&amp;ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Jelena Stankevič</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                           <i class="far fa-calendar"></i> Paskaitų tvarkaraštis
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2015/02/i-sileikiene.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dr. Irma Šileikienė</li>
-                    <li class="list-group-item"> docentė, informacinių sistemų katedros vedėja</li>
-                    <li class="list-group-item"> Trečiadieniais, 9:30 - 11:00 101 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1046"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/a-usovaite.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dr. Ana Usovaitė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1067"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/j-vasaitiene.jpg?ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Jolita Vasaitienė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Penktadieniais, 13:20 - 14:50 420A kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1065" href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/a-zemgulis.jpg?ssl=1" align="left"
-                    height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Dr. Algis Žemgulis</li>
-                    <li class="list-group-item"> docentas</li>
-                    <li class="list-group-item"> Pirmadieniais, 10:45 - 11:45 101 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1055"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Genė Štrimaitienė </li>
-                    <li class="list-group-item">Raštinės vedėja</li>
-                    <li class="list-group-item"> 214 kab.</li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Gintarė Bartkevičiūtė </li>
-                    <li class="list-group-item">Referentė</li>
-                    <li class="list-group-item">214 kab.</li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="images/alina_stakeniene.png"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Alina Stakėnienė </li>
-                    <li class="list-group-item">Studijų skyriaus specialistė</li>
-                    <li class="list-group-item"> 219 kab.</li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Ramunė Visockienė</li>
-                    <li class="list-group-item">Studijų skyriaus vadybininkė</li>
-                    <li class="list-group-item"> 331 kab.</li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Vilija Didžiokienė </li>
-                    <li class="list-group-item">Studijų skyriaus vadybininkė</li>
-                    <li class="list-group-item"> 333 kab.</li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/ukc.viko.lt/media/uploads/sites/17/2016/02/A.Netiksiene.jpg?resize=100%2C100&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Aušra Netikšienė </li>
-                    <li class="list-group-item"> Lektorė</li>
-                    <li class="list-group-item"> Ketvirtadieniais, 11:45 - 13:15 307 kab.</li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1035"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/ukc.viko.lt/media/uploads/sites/17/2016/02/M.Kiskyte.jpg?resize=100%2C100&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Milda Kiškytė </li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Ketvirtadieniais, 13:30 - 15:00 305 kab.</li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1013"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/ukc.viko.lt/media/uploads/sites/17/2016/02/J.Helsvig.jpg?resize=100%2C100&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Jūratė Helsvig </li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Antradieniais, 15:15 - 16:45 309 kab.</li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1008"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="images/baltruniene.png"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Violeta Baltrūnienė </li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Antradieniais, 11:00 - 12:30 318 kab.</li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-993" href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-
-            <div class="element-item transition metal" data-category="transition">
-                <img
-                        src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&amp;ssl=1"
-                        align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Santa Mirauskienė</li>
-                    <li class="list-group-item"> asistentė, Partnerystės ir projektų skyriaus vadybininkė</li>
-                    <li class="list-group-item"> Ketvirtadieniais, 9:30 - 11:00 325 kab.
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*40"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition">
-                <img
-                        src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&amp;ssl=1"
-                        align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> M. Motiejūnaitė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*42"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-
-            <div class="element-item transition metal" data-category="transition">
-                <img
-                        src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&amp;ssl=1"
-                        align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> R. Trimailovienė</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=*55"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition">
-                <img
-                        src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&amp;ssl=1"
-                        align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> K. Mečinskaitė-Stankevič</li>
-                    <li class="list-group-item"> lektorė</li>
-                    <li class="list-group-item"> Derinti el. paštu
-                    </li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=98&teacher=-1030"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Eliza Norkuvienė
-                    </li>
-                    <li class="list-group-item">Partnerystės ir projektų skyriaus vedėja</li>
-                    <li class="list-group-item"> 217 kab.</li>
-                </ul>
-            </div>
-
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Giedrė Marčiulaitienė
-                    </li>
-                    <li class="list-group-item">Partnerystės ir projektų skyriaus vadybininkė
-                        vadybininkė</li>
-                    <li class="list-group-item"> 220 kab.</li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2015/02/a-kozic.jpg?resize=150%2C151&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Dr. Antoni Kozič </li>
-                    <li class="list-group-item">Elektronikos katedros vedėjas, lektorius</li>
-                    <li class="list-group-item"> Trečiadieniais, 11:45 - 13:15 409 kab.</li>
-                    <li class="list-group-item">
-                        <div class="links">
-                            <a class="openpop" id="https://vikoeif.edupage.org/timetable/view.php?num=90&teacher=*20"
-                               href=""><i class="far fa-calendar"></i> Paskaitų tvarkaraštis</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-
-
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i2.wp.com/eif.viko.lt/media/uploads/sites/5/2015/02/e-leskauskaite.jpg?resize=150%2C150&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Elvyra Leskauskaitė
-                    </li>
-                    <li class="list-group-item">Elektronikos ir Kompiuterių sistemų ir
-                        telekomunikacijų katedrų administratorė</li>
-                    <li class="list-group-item"> 409 kab.</li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i0.wp.com/eif.viko.lt/media/uploads/sites/5/2015/02/i-mertvecova.jpg?resize=150%2C150&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Irina Mertvecova
-                    </li>
-                    <li class="list-group-item">Informacinių sistemų ir Programinės įrangos
-                        katedrų administratorė</li>
-                    <li class="list-group-item"> 206 kab.</li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Gintautas Plaščinskas </li>
-                    <li class="list-group-item">Inžinierius elektronikas</li>
-                    <li class="list-group-item"> 106A kab.</li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Valdas Šukelis </li>
-                    <li class="list-group-item"> Inžinierius IT</li>
-                    <li class="list-group-item"> 103 kab.</li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item">Jurij Litvinenko</li>
-                    <li class="list-group-item">Inžinierius IT</li>
-                    <li class="list-group-item">103 kab.</li>
-                </ul>
-            </div>
-
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Aušra Radzevičienė </li>
-                    <li class="list-group-item">ūkio tarnybos vadovė</li>
-                    <li class="list-group-item"> 218 kab.</li>
-                </ul>
-            </div>
-            <div class="element-item transition metal" data-category="transition"><img
-                    src="https://i1.wp.com/eif.viko.lt/media/uploads/sites/5/2018/04/no_photo.png?fit=150%2C150&ssl=1"
-                    align="left" height="400px">
-                <ul class="list-group">
-                    <li class="list-group-item"> Natalja Daškevič </li>
-                    <li class="list-group-item">bibliotekos vedėja</li>
-
-                    <li class="list-group-item"> 425kab.</li>
-                </ul>
-            </div>
 
         </div>
-        <script src='dist/jquery.min.js'></script>
-        <script src='dist/isotope.pkgd.js'></script>
-
-
-        <script src="js/index.js"></script>
     </div>
+    <!--IFRAME END-->
 
-    <!--END DEDTYTOJAI-->
 
+    <!--<KLAVIATURA IS APACIOS" />-->
+    <div style="bottom:50px; background: white; position: fixed; z-index: 5000;" class="simple-keyboard"></div>
 
-    <!--SKELBIMAI ARBA KOLEGIJOS NAUJIENOS IVYKIAI-->
+    <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.min.js"></script>
+    <script src="src/index.js"></script>
 
+    <div class="grid">
+
+    </div>
 
 </div>
 
-<footer>
-    <ul class="nav nav-tabs nav-justified red" role="tablist">
 
-
-        <li class="nav-item" style="background:#2639f3;">
-            <a id="txt" data-toggle="tab" role="tab" aria-controls="profile"
-               aria-selected="false" style="font-size: 100px; font-weight: bold;">9:45:15</a>
-            <span id="kelinta_savaite" style="font-size:100px; font-weight: bold;">, 2 SAVAITĖ</span>
-        </li>
 <script>
+    // external js: isotope.pkgd.js
 
-    Date.prototype.getWeek = function () {
-        var target  = new Date(this.valueOf());
-        var dayNr   = (this.getDay() + 6) % 7;
-        target.setDate(target.getDate() - dayNr + 3);
-        var firstThursday = target.valueOf();
-        target.setMonth(0, 1);
-        if (target.getDay() != 4) {
-            target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
+
+    // init Isotope
+    var qsRegex;
+
+    // init Isotope
+    var $grid = $('.grid').isotope({
+        itemSelector: '.element-item',
+        layoutMode: 'fitRows',
+        filter: function () {
+            return qsRegex ? $(this).text().match(qsRegex) : true;
         }
-        return 1 + Math.ceil((firstThursday - target) / 604800000);
-    };
+    });
 
-    let d= new Date();
-    let kelinta = d.getWeek() + 1;
+    // use value of search field to filter
+    var $quicksearch = $('.quicksearch').keyup(debounce(function () {
+        qsRegex = new RegExp($quicksearch.val(), 'gi');
+        $grid.isotope();
+    }, 200));
 
+    // debounce so filtering doesn't happen every millisecond
+    function debounce(fn, threshold) {
+        var timeout;
+        threshold = threshold || 100;
+        return function debounced() {
+            clearTimeout(timeout);
+            var args = arguments;
+            var _this = this;
 
-    if(kelinta % 2 === 1){
-        $("#kelinta_savaite").text(", 1 SAVAITĖ");
-    }else{
-        $("#kelinta_savaite").text(", 2 SAVAITĖ");
+            function delayed() {
+                fn.apply(_this, args);
+            }
+
+            timeout = setTimeout(delayed, threshold);
+        };
     }
 
-    //alert(d.getWeek()+1);
+
 </script>
+
+<script src="firebase.js"></script>
+
+<script>
+    const config = {
+        apiKey: "AIzaSyCRYVIHl_orktaBMwsmlQtMcOaeGO0FTQI",
+        authDomain: "eif-courses.firebaseapp.com",
+        databaseURL: "https://eif-courses.firebaseio.com",
+        projectId: "eif-courses",
+        storageBucket: "eif-courses.appspot.com",
+        messagingSenderId: "535363326769"
+    };
+    firebase.initializeApp(config);
+</script>
+
+
+
+
+<!--FOOOTER LYGINE SAVAITE IR LAIKRODIS-->
+<footer>
+    <ul class="nav nav-tabs nav-justified red" role="tablist" style="font-size: xx-large;">
+
+
+        <li class="nav-item">
+            <a id="txt" data-toggle="tab" role="tab" aria-controls="profile"
+               aria-selected="false" style="font-weight: bold;">9:45:15</a>
+            <span id="kelinta_savaite" style="font-weight: bold;     background: red;
+    padding: 4px;"> 2 SAVAITĖ</span>
+        </li>
+        <script>
+
+            Date.prototype.getWeek = function () {
+                var target = new Date(this.valueOf());
+                var dayNr = (this.getDay() + 6) % 7;
+                target.setDate(target.getDate() - dayNr + 3);
+                var firstThursday = target.valueOf();
+                target.setMonth(0, 1);
+                if (target.getDay() != 4) {
+                    target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
+                }
+                return 1 + Math.ceil((firstThursday - target) / 604800000);
+            };
+
+            const savaitesDienaIsDB = firebase.database().ref("savaite/");
+            savaitesDienaIsDB.on("value", function (snapshot) {
+
+                let d = new Date();
+                let kelinta = d.getWeek()+snapshot.val();
+                if (kelinta % 2 === 1) {
+                    $("#kelinta_savaite").text(" 1 SAVAITĖ");
+                } else {
+                    $("#kelinta_savaite").text(" 2 SAVAITĖ");
+                }
+                //console.log(snapshot.val());
+                //kelinta = d.getWeek() + snapshot.val();
+                //console.log(kelinta);
+            });
+
+
+
+
+
+
+            //alert(d.getWeek()+1);
+        </script>
 
 
     </ul>
 </footer>
 
+<!--CRAWLER IŠSAUGOTI DĖSTYTOJUS IŠ EIF TVARKARAŠČIŲ-->
+<script>
+    // $.get('https://vikoeif.edupage.org/timetable/').success(function(data){
+    //     let matched = data.match(/{"table":"teachers",[\w\W]*?\(-a\)"}]}/gm);
+    //     //for (let k in matched[0]) {
+    //         localStorage.setItem('dest', matched[0]);
+    //         // console.log(JSON.parse(matched[0]).rows[k].short,
+    //         //     JSON.parse(matched[0]).rows[k].id,
+    //         //     "https://vikoeif.edupage.org/timetable/view.php?teacher=" + JSON.parse(matched[0]).rows[k].id.toString() + "");
+    //
+    //    // }
+    //
+    // });
+</script>
+
 
 <script>
 
     // TODO HIDE KEYBOAR NAUJAS STENDAS
-    function hideKeyboard(){
+    function hideKeyboard() {
         $(".simple-keyboard").hide();
     }
 
@@ -2301,13 +766,20 @@ height:320px;"
                 if ((elapsed > timeout) && !_idle) {
 
 
+                    if (navigator.onLine) {
+                        //window.location.assign("https://stendas.github.io");
+                       // $('p#dayid' + today.format('DD')).addClass('active');
+                        $('p#dayid' + today.format('DD')).css('color', 'red');
+                        $('#home-tab i').trigger('click');
+                        $('.simple-keyboard').hide();
 
-                    if(navigator.onLine){
-                        window.location.assign("https://stendas.github.io");
-                        $('#status').css('background-image', 'url("images/live.png")');
+
+                        console.log('ONLINE');
+                        //$('#status').css('background-image', 'url("images/live.png")');
 
                     } else {
-                        $('#status').css('background-image', 'url("images/offlinestatus.png")');
+                        console.log('OFFLINE');
+                        //$('#status').css('background-image', 'url("images/offlinestatus.png")');
                         //alert('offline we stay offline version till internet goes live');
                     }
                     //alert('hello');
@@ -2324,18 +796,61 @@ height:320px;"
     })(2000, 120 * 1000);
 </script>
 
+<script>
+    (function (poll, timeout) {
+
+        let _idle = false,
+            _lastActive = 0,
+            _activeNow = function () {
+                _lastActive = new Date();
+
+                if (_idle) {
+//$('.screensaver').hide();
+                    _idle = false;
+                }
+            },
+            _poll = function () {
+
+                let elapsed = (new Date()) - _lastActive;
+
+                if ((elapsed > timeout) && !_idle) {
+
+
+                    if (navigator.onLine) {
+                        window.location.assign("https://stendas.github.io");
+                        // $('p#dayid' + today.format('DD')).addClass('active');
+                        // $('p#dayid' + today.format('DD')).css('color', 'red');
+                        // $('#home-tab i').trigger('click');
+                        // $('.simple-keyboard').hide();
+                        console.log('ONLINE');
+                        //$('#status').css('background-image', 'url("images/live.png")');
+
+                    } else {
+                        console.log('OFFLINE');
+                        //$('#status').css('background-image', 'url("images/offlinestatus.png")');
+                        //alert('offline we stay offline version till internet goes live');
+                    }
+                    //alert('hello');
+                    //$('.screensaver').fadeIn('slow');
+                    _idle = true;
+                }
+            };
+
+        $(window).bind('mousemove click keypress resize focus', _activeNow);
+
+        window.setInterval(_poll, poll);
+
+        _activeNow();
+    })(2000, 3600 * 1000);
+</script>
+
+
+
 
 <script>
     // Firbease Init
-    const config = {
-        apiKey: "AIzaSyCRYVIHl_orktaBMwsmlQtMcOaeGO0FTQI",
-        authDomain: "eif-courses.firebaseapp.com",
-        databaseURL: "https://eif-courses.firebaseio.com",
-        projectId: "eif-courses",
-        storageBucket: "eif-courses.appspot.com",
-        messagingSenderId: "535363326769"
-    };
-    firebase.initializeApp(config);
+
+
 
 
     function getChangesByDate() {
@@ -2367,6 +882,7 @@ height:320px;"
 
                 const newPlayer = data.val();
 
+
                 if (newPlayer.date === (moment().format('ddd MMM DD YYYY'))) {
 
                     destytoju_pakeitimai +=
@@ -2378,14 +894,17 @@ height:320px;"
                     let today = moment();
                     today.locale('lt');
 
+
                 }
             });
+
             pakeitimaiDiv.innerHTML += '<tbody">' +
                 destytoju_pakeitimai + '</tbody>';
             pakeitimaiDiv.innerHTML += '<br/><br/>';
         });
 
     }
+
     function stringifyTomorrow() {
         let today = moment();
         let tomorrow = today.add(1, 'days');
@@ -2414,13 +933,15 @@ height:320px;"
 
 
 </script>
+
+
 <script>
 
 
     // TODO hide text from text
     $(".quicksearch").focus(function () {
         keyboard.setInput("");
-        var e = $.Event( "keyup", { keyCode: 13 } );
+        var e = $.Event("keyup", {keyCode: 13});
         $('.quicksearch').trigger(e);
         //hideKeyboard();
     });
@@ -2433,10 +954,9 @@ height:320px;"
     }
 
     // TODO FUNKCIJA SUKURTA NAUJAS STENDAS 2018 11 05
-    function showKeyboard(){
+    function showKeyboard() {
         $(".simple-keyboard").show();
     }
-
 
 
     function readAndDisplayData(diena) {
@@ -2453,7 +973,7 @@ height:320px;"
 
             //"<th colspan=\"4\" style=\"background: white!important; color:red; font-size:50pt\">DĖMESIO! Konsultacijos vyks pagal patvirtintą konsultacijų tvarkaraštį 2018.10.29-2018.11.02, plačiau žr. https://eif.viko.lt.</th>"+
 
-            document.getElementById("pakeitimai").innerHTML = '<thead>'+'<tr><th>PASKAITA</th>' + '<th>GRUPĖ</th>' + '<th>DĖSTYTOJAS</th>' + '<th>AUDITORIJA</th></tr></thead>';
+            document.getElementById("pakeitimai").innerHTML = '<thead>' + '<tr><th>PASKAITA</th>' + '<th>GRUPĖ</th>' + '<th>DĖSTYTOJAS</th>' + '<th>AUDITORIJA</th></tr></thead>';
 
             const laiko_intervalas = ["7<sup>45</sup> - 9<sup>15</sup>", "9<sup>30</sup> - 11<sup>00</sup>", "11<sup>45</sup> - 13<sup>15</sup>",
                 "13<sup>30</sup> - 15<sup>00</sup>", "15<sup>15</sup> - 16<sup>45</sup>", "17<sup>15</sup>" +
@@ -2483,36 +1003,11 @@ height:320px;"
     }
 </script>
 
-<!--SKRIPTAS UZKRAUTI DESTYTOJAMS IS WEBO-->
 <script>
-    $(document).ready(function () {
-        $(".popup").hide();
-        $(".openpop").click(function (e) {
-            e.preventDefault();
-            //$("iframe").attr("src", $(this).attr('href'));
-            $('.close_mygtukas').show();
-            //$('.popup').html('<iframe class="avoid-clicks" style="margin-top: 90px;" src="view.html" width="2900px" height="2000px" id="InnerIframe" scrolling="no"> <p>Your browser does not support iframes.</p> </iframe> ');
-            window.scrollTo(0, 0);
-
-            var destytojo_tvarkarascio_URL = e.target.id;
-            //alert(e.target.id);
-            $('.popup').html('<embed style="margin-top: 10px; background-image:url(images/load.jpg);background-size: cover; background-repeat: no-repeat; overflow:hidden" class="avoid-clicks" width="3000px" height="2000px" id="InnerFrame" src="'+destytojo_tvarkarascio_URL+'">');
 
 
-            //$(".links").fadeOut('slow');
-            $(".popup").fadeIn('slow');
-
-            // $("iframe#InnerIframe").show();
-        });
-
-        $(".close").click(function () {
-            $(this).parent().fadeOut("slow");
-            $('.close_mygtukas').hide();
-            $('.popup').hide();
-            //$(".links").fadeIn("slow");
-        });
-    });
 </script>
+
 
 </body>
 </html>
